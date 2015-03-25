@@ -1,0 +1,943 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"getCo",
+				"getComicsLength"
+			],
+			[
+				"ng-op",
+				"ng-options	AngularJS"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"qu",
+				"query"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"s",
+				"src"
+			],
+			[
+				"j",
+				"js/jquery"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"back",
+				"background-size"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"ini",
+				"inline-block"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"insura",
+				"insuranceId"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"margi",
+				"margin-top"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/index.html",
+			"settings":
+			{
+				"buffer_size": 2523,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/controller.js",
+			"settings":
+			{
+				"buffer_size": 225,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/app.js",
+			"settings":
+			{
+				"buffer_size": 1310,
+				"line_ending": "Unix",
+				"name": "var app = app || {};"
+			}
+		},
+		{
+			"file": "/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/jQuery/Tabla/index.html",
+			"settings":
+			{
+				"buffer_size": 1420,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/angular-lab-master/app/views/user.html",
+			"settings":
+			{
+				"buffer_size": 2550,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"htmlprettify",
+				"HTMLPrettify: Set Keyboard Shortcuts"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/Javascript/Agenda/js/script.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/app.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/angular-lab-master/app/index.html",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/User/ColorPicker.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/ColorPicker/ColorPicker.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/HTML-CSS-JS Prettify/Default (Linux).sublime-keymap",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/todomvc-gh-pages/examples/jquery/index.html",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/controllers.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/angular-lab-master/app/views/user.html",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/todomvc-gh-pages/examples/jquery/js/app.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/todomvc-gh-pages/examples/jquery/package.json",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/todomvc-gh-pages/examples/jquery/readme.md",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/AngularJS/AngularJS-sublime-package.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/angularProject-master/json/comics.json",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/navhead.tmpl.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/masthead.tmpl.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/common/assets/component/navhead/navhead.component.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/common/assets/component/navold.component.xml",
+		"/tmp/sublime-svn-1426273034/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/balnews/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/balnews/assets/bucket/navhead.bucket.xml",
+		"/tmp/sublime-svn-1426183490/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/soflanews/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/sfl/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/redeye/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/orlnews/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/lanews/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/hrnews/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/hoyla/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/hartnews/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/chinews/assets/bucket/navhead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/allnews/assets/bucket/navhead.bucket.xml",
+		"/tmp/sublime-svn-1426101292/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/chinews/assets/bucket/nav.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/common/assets/component/main.component.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/balnews/assets/bucket/masthead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/balnews/stylesheets/main.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/daily-logo.1.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/panels.tmpl.css",
+		"/tmp/sublime-svn-1425931340/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/turbine_enviroment_tools_2.0.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/navigation.tmpl.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/courant-logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/daily-logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/common/assets/bucket/navhead.bucket.xml",
+		"/tmp/sublime-svn-1425660647/SVN",
+		"/tmp/sublime-svn-1425660477/SVN",
+		"/tmp/sublime-svn-1425652061/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/tmp/sublime-svn-1425588392/SVN",
+		"/tmp/sublime-svn-1425587755/SVN",
+		"/tmp/sublime-svn-1425587628/SVN",
+		"/tmp/sublime-svn-1425566260/SVN",
+		"/tmp/sublime-svn-1425565751/SVN",
+		"/tmp/sublime-svn-1425494081/SVN",
+		"/tmp/sublime-svn-1425493532/SVN",
+		"/tmp/sublime-svn-1425414776/SVN",
+		"/tmp/sublime-svn-1425414650/SVN",
+		"/tmp/sublime-svn-1425414486/SVN",
+		"/tmp/sublime-svn-1425414220/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/medialanding.tmpl.css",
+		"/tmp/sublime-svn-1425390186/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/staff.tmpl.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/weatheralert.tmpl.css",
+		"/tmp/sublime-svn-1425321693/SVN",
+		"/tmp/sublime-svn-1425321420/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/weather.tmpl.css",
+		"/tmp/sublime-svn-1425317117/SVN",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/outfits_base.tmpl.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/balnews/assets/bucket/weather.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/balnews/stylesheets/masthead.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates/storycore.tmpl.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/JSHint Gutter/Default (Linux).sublime-keymap",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/SVN/SVN.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/webapp/WEB-INF/tags/html/navigation.tag",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat-instances/instance06/turbine.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat-instances/instance10/turbine.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat-instances/instance11/turbine.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat-instances/instance12/turbine.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat-instances/instance13/turbine.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat-instances/instance14/turbine.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/total_turbine_tools_1.0.sh",
+		"/etc/apache2/httpd-vhosts.conf",
+		"/etc/apache2/sites-available/001-jive",
+		"/etc/apache2/apache2.conf",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbine-tomcat-dev-install/setup.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/turbine.cfg/httpd-vhosts.conf",
+		"/etc/apache2/extra",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat7/bin/catalina.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/allnews/javascripts/newsletters/gallery.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/allnews/javascripts/newsletters/prototype.js",
+		"/etc/init.d/apache2",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/ndgharwood/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/ndgharwood/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/mrtgrove/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/mrtgrove/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/lcnwood/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/lcnwood/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/lcnshire/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/lcnshire/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/libertyville/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/libertyville/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/lkforest/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/lkforest/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/hldpark/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/naperville/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Desktop/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Desktop/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/naperville/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/frankpark/images/logo.svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/frankpark/images/logo (frank).svg",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/frankpark/svgjsconfig (frank).xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/subpa/chinews/frankpark/stylesheets/3ptnav.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/subpa/chinews/naperville/stylesheets/3ptnav.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/subpa/chinews/naperville/stylesheets/logos_svg.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/aurora/svgjsconfig.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Minify/Minify.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Minifier/Minifier.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/webapp/WEB-INF/tags/html/masthead.tag",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/lanews/stylesheets/masthead.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/lanews/assets/component/main.component.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/lanews/assets/bucket/masthead.bucket.xml",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/binJiveCreate.sh",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/vpnsetup.sh"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/common",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/common",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/common/templates",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/webapp",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/ThomasCook/web-ui",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/ThomasCook/specs-master",
+			"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/ThomasCook/web-ui"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"=\"#\">",
+			"navbar",
+			"trb_navhead_weather",
+			"trb_masthead_date_margin-right_420bp",
+			"trb_masthead_date",
+			"trb_masthead_right_container",
+			"trb_masthead_right_container_margin_top",
+			"trb_masthead_right_container",
+			"trb_navhead_time",
+			"line-height",
+			"trb_masthead_weather:before",
+			"trb_masthead_weather",
+			"trb_navhead_time",
+			"trb_masthead_weather",
+			"trb_navhead_lowerNav",
+			"trb_navhead_lowerNav_a",
+			"trb_navhead_lowerNav",
+			"trb_navhead_logo",
+			"logo",
+			"<!— logo —>",
+			"trb_navhead_logo",
+			"bucket",
+			"trb_navhead_logo",
+			".trb_panelmod_closer",
+			"baltimore",
+			"balt",
+			"trb_navhead_logo",
+			"trb_masthead_date_verticalAligment",
+			"trb_masthead_date",
+			"trb_masthead_right_container",
+			"masthead_subtitle_visibility",
+			"trb_masthead_right_container_display_700bp",
+			"margin-bottom",
+			"margin-bottom: 5",
+			"trb_navhead_weather",
+			"masthead_subtitle_visibility",
+			"trb_masthead_right_container_display_700bp",
+			"trb_masthead_right_container",
+			".trb_masthead_right_container",
+			"trb_navhead asdasd",
+			"trb_masthead_date",
+			"trb_masthead_date_margin_top",
+			"trb_masthead_date",
+			"font-family",
+			"trb_navhead_weather",
+			"trb_navhead_weather_map",
+			"trb_article_dateline_time",
+			"trb_masthead_date",
+			"trb_navhead_time",
+			"5px",
+			"trb_navhead_time",
+			"trb_masthead_right_container",
+			"trb_masthead",
+			"trb_masthead_margin_top_700bp",
+			"trb_masthead_fb",
+			"spacing_trb_gallerylanding_trb_outfit_categorySectionHeading_date_1040bp",
+			"879",
+			"trb_gallerylandingMasthead_subtitle",
+			"trb_masthead_subtitle",
+			"trb_gallerylandingMasthead_subtitle_1060bp",
+			"880",
+			"medialanding_mediascreen_min_width",
+			"trb_masthead_title_wrapper",
+			".trb_gallerylandingMasthead .trb_masthead_subtitle",
+			"trb_masthead_header_subtitle_wrapper",
+			"staff",
+			"trb_masthead_header_subtitle_wrapper",
+			"data-content-type",
+			"data-content-type='staff'",
+			"data-content-type~='staff'",
+			"data-content-type",
+			"trb_masthead_title_wrapper",
+			".trb_masthead_header_subtitle_wrapper:after",
+			"trb_gallerylandingMasthead_title_wrapper_width_420bp",
+			"trb_gallerylandingMasthead",
+			".trb_mastheadsmall .trb_gallerylandingMasthead",
+			"galleryLogo",
+			"data-content-svgtype=\"galleryLogo\"",
+			"data-content-svgtype~=\"galleryLogo\"",
+			"data-content-svgtype",
+			"trb_masthead_title_wrapper",
+			"trb_gallerylandingMasthead_subtitle_700bp",
+			"trb_masthead_subtitle",
+			"trb_gallerylandingMasthead",
+			"trb_masthead_header_subtitle_wrapper",
+			"[data-state~=navmenu_banner] .trb_allContentWrapper",
+			"trb_weatherAlert_headline",
+			"trb_weatherAlert_sectionFront",
+			".trb_weatherAlert .trb_weatherAlert_sectionFront",
+			".trb_weatherAlert {",
+			"trb_weatherAlert",
+			"trb_masthead_trb_weatherAlert",
+			"trb_weatherAlert",
+			"trb_weatherAlert trb_weatherAlert_sectionFront",
+			"trb_masthead_header_subtitle_wrapper_display",
+			"trb_masthead_header_subtitle_wrapper",
+			"navhead.bucket.xml",
+			"trb_masthead_header_subtitle_wrapper",
+			"trb_masthead_weather_verticalAligment",
+			"trb_masthead_weather_temp",
+			"trb_masthead_weather",
+			"trb_masthead_weather_temp",
+			"data-datetime-monthshort",
+			"trb_article_dateline_time",
+			"time",
+			"trb_navhead_time",
+			"trb_article_dateline_time",
+			"navigation.tag",
+			"trb_article_dateline_time",
+			"\n      ",
+			"trb_masthead_weather_temp",
+			"trb_navhead_weather",
+			"trb_navhead_lowerWrapper",
+			"banner",
+			"primary_color_grey_0",
+			"trb_nav_container",
+			"hyperlinks_color",
+			"trb_masthead",
+			"trb_outfit_section_heading_color",
+			"trb_outfit_categorySectionHeading_a",
+			"/home/colacilli",
+			"passenger",
+			"InsuranceCtrl",
+			"costingItem",
+			"availableExtras",
+			"setBasket",
+			"setBAsket",
+			"offerPackages1-sort-hotel-name-asc.json"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"trb_navhead_weather",
+			"/home/likewise-open/GLOBANT/luis.pagliaro",
+			"/home/luis.pagliaro",
+			"/home/likewise-open/GLOBANT/luis.pagliaro"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/index.html",
+					"settings":
+					{
+						"buffer_size": 2523,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2492,
+								2492
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 684.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/js/controller.js",
+					"settings":
+					{
+						"buffer_size": 225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/js/app.js",
+					"settings":
+					{
+						"buffer_size": 1310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								848,
+								848
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"auto_name": "var app = app || {};",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/jQuery/Tabla/index.html",
+					"settings":
+					{
+						"buffer_size": 1420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/angular-lab-master/app/views/user.html",
+					"settings":
+					{
+						"buffer_size": 2550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								842,
+								842
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true
+}
