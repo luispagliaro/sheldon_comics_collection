@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sheldon Comics Collection</title>
-  <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
   <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/jquery-ui-cupertino/jquery-ui.css">
 </head>
 
 <body>
   <div class="container">
-    <main class="panel panel-primary">
+    <div class="panel panel-primary">
       <header class="panel-heading">
         <h1 class="text-center">Sheldon's Comics Collection</h1>
       </header>
@@ -34,31 +34,60 @@
             <ul class="nav navbar-nav">
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter by genre <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Genre 1</a></li>
-                  <li><a href="#">Genre 2</a></li>
-                  <li><a href="#">Genre 3</a></li>
+                <ul id="dropdown-genre-menu" class="dropdown-menu" role="menu">
                 </ul>
               </li>
             </ul>
             <div class="nav navbar-nav navbar-right">
-              <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+              <button type="button" class="btn btn-default navbar-btn" onclick="$('#dialog-add-comic').dialog('open');return false;">Add comic</button>
             </div>
           </div>
         </div>
       </nav>
-      <div class="panel-body">
+      <main class="panel-body">
         <div class="row" id="comiscCollection">
         </div>
-      </div>
-      <div class="panel-footer panel-primary text-center">Sheldon's Comics Collection. Designed by Luis Pagliaro.</div>
-    </main>
+      </main>
+      <footer class="panel-footer panel-primary text-center">Sheldon's Comics Collection. Developed by Luis Pagliaro.</footer>
+    </div>
+    <div id="dialog-add-comic" title="Add comic">
+      <form id="form-add-comic" role="form">
+        <div class="form-group">
+          <label class="control-label" for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="genre">Genre:</label>
+          <select id="genre" class="form-control" required>
+            <option value="" disabled selected>Select genre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="description">Description:</label>
+          <textarea type="text" class="form-control" id="description" placeholder="Enter description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="quantity">Quantity:</label>
+          <input type="number" min="1" class="form-control" id="quantity" required>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="video">Video URL:</label>
+          <input type="url" class="form-control" id="video" placeholder="Enter video url">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="images">Images:</label>
+          <input type="file" id="images" multiple>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
   </div>
   <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-ui/jquery-ui.min.js"></script>
   <script src="js/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/jquery-ui-cupertino/jquery-ui.js"></script>
   <script src="js/controller.js"></script>
+  <script src="js/comic.js"></script>
+  <script src="js/genre.js"></script>
 </body>
 
 </html>
