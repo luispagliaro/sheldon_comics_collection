@@ -55,29 +55,29 @@
       <form id="form-add-comic" role="form">
         <div class="form-group">
           <label class="control-label" for="name">Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+          <input type="text" class="form-control" id="input-name" placeholder="Enter name" required>
         </div>
         <div class="form-group">
           <label class="control-label" for="genre">Genre:</label>
-          <select id="genre" class="form-control" required>
+          <select id="select-genre" class="form-control" required>
             <option value="" disabled selected>Select genre</option>
           </select>
         </div>
         <div class="form-group">
           <label class="control-label" for="description">Description:</label>
-          <textarea type="text" class="form-control" id="description" placeholder="Enter description" required></textarea>
+          <textarea type="text" class="form-control" id="text-description" placeholder="Enter description" required></textarea>
         </div>
         <div class="form-group">
           <label class="control-label" for="quantity">Quantity:</label>
-          <input type="number" min="1" class="form-control" id="quantity" placeholder="Enter quantity" required>
+          <input type="number" min="1" class="form-control" id="input-quantity" placeholder="Enter quantity" required>
         </div>
         <div class="form-group">
-          <label class="control-label" for="video">Video URL:</label>
-          <input type="url" class="form-control" id="video" placeholder="Enter video url">
+          <label class="control-label" for="video">Videos URL:</label>
+          <textarea type="url" class="form-control" id="text-videos" placeholder="Enter video url (one per line)" required></textarea>
         </div>
         <div class="form-group">
           <label class="control-label" for="images">Images:</label>
-          <input type="file" id="images" accept="image/*" multiple>
+          <input type="file" id="input-images" accept="image/*" multiple required>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>

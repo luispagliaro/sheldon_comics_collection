@@ -2,7 +2,7 @@ $(document).ready(function() {
   var availableComics = [];
 
   $.each(comics, function(index, comic) {
-    $('#comiscCollection').append('<div class=\'comic-item col-xs-6 col-md-3\'><h3><a href=\'#\'>' + comic.name + '</a></h3><span class=\'label label-success\'>' + comic.genre + '</span><div class=\'thumbnail\'><img src=\'' + comic.image[0] + '\' /><p class=\'caption\'>' + comic.description + '</p></div></div>');
+    $('#comiscCollection').append('<div class=\'comic-item col-xs-6 col-md-3\'><h3><a href=\'#\'>' + comic.name + '</a></h3><span class=\'label label-success\'>' + App.getGenre(comic.idGenre).name + '</span><div class=\'thumbnail\'><img src=\'' + comic.images[0] + '\' /><p class=\'caption\'>' + comic.description + '</p></div></div>');
 
     availableComics.push(comic.name);
   });
@@ -13,7 +13,16 @@ $(document).ready(function() {
 
   $.each(genres, function(index, genre) {
     $('#dropdown-genre-menu').append('<li><a href=\'#\'>' + genre.name + '</a></li>');
-    $('#genre').append('<option value=\'' + genre.id + '\'>' + genre.name + '</option>');
+    $('#select-genre').append('<option value=\'' + genre.id + '\'>' + genre.name + '</option>');
+  });
+
+  $('#select-genre').append('<option value="add">Add genre</option>');
+
+  $('#select-genre').change(function(e) {
+    if ($(this).val() === 'add') {
+      $('#select-genre').after("<input type=\"text\" class=\"form-control\" id=\"input-genre\" placeholder=\"Enter genre\" required>");
+      $('#select-genre').hide();
+    }
   });
 
   $('#dropdown-genre-menu li').click(function(e) {
@@ -28,7 +37,7 @@ $(document).ready(function() {
   var dialog = {
     modal: true,
     width: 320,
-    height: 565,
+    height: 585,
     position: {
       my: 'center',
       at: 'center',
@@ -45,17 +54,17 @@ $(document).ready(function() {
   $('#dialog-add-comic').dialog(dialog);
 
   $('#form-add-comic').submit(function(event) {
-    var files = $('#images')[0].files;
+    var files = $('#input-images')[0].files;
     var images = [];
     var total = files.length;
     var loaded = 0;
+    var idGenre = 0;
 
     for (var i = 0; i < total; i++) {
       readData(files[i]);
     }
 
     function readData(file) {
-      alert(file);
       var fileReader = new FileReader();
       fileReader.readAsDataURL(file);
 
@@ -64,18 +73,27 @@ $(document).ready(function() {
 
         var image = fileReader.result;
 
-        alert(image);
-
         images.push(image);
 
         if (loaded == total) {
+          setGenre();
           onAllFilesLoaded();
         }
       };
     }
 
+    function setGenre() {
+      if ($('#input-genre').val() !== undefined) {
+        var genre = new App.Genre($('#input-genre').val());
+        App.setGenre(genre);
+        idGenre = genre.id;
+      } else {
+        idGenre = $('#select-genre option:selected').val();
+      }
+    }
+
     function onAllFilesLoaded() {
-      var comic = new App.Comic($('#name').val(), $('#genre option:selected').val(), $('#description').val(), $('#quantity').val(), images);
+      var comic = new App.Comic($('#input-name').val(), idGenre, $('#text-description').val(), $('#input-quantity').val(), images, $('#text-videos').val());
 
       App.setComic(comic);
 

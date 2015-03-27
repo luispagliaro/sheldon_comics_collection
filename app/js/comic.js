@@ -2,13 +2,14 @@ var App = App || {};
 
 var comics = JSON.parse(localStorage.getItem("comics")) || [];
 
-App.Comic = function(name, idGenre, description, quantity, image) {
+App.Comic = function(name, idGenre, description, quantity, images, videos) {
   this.id = App.getComicsLength() + 1;
   this.name = name;
-  this.genre = App.getGenre(idGenre).name;
+  this.idGenre = idGenre;
   this.description = description;
   this.quantity = quantity;
-  this.image = image;
+  this.images = images;
+  this.videos = videos;
 };
 
 App.setComic = function(comic) {
