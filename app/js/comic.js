@@ -1,6 +1,6 @@
 var App = App || {};
 
-var comics = JSON.parse(localStorage.getItem("comics")) || [];
+App.comics = [];
 
 App.Comic = function(name, idGenre, description, quantity, images, videos) {
   this.id = App.getComicsLength() + 1;
@@ -13,22 +13,22 @@ App.Comic = function(name, idGenre, description, quantity, images, videos) {
 };
 
 App.setComic = function(comic) {
-  comics.push(comic);
+  App.comics.push(comic);
   localStorage.setItem("comics", JSON.stringify(comics));
 }
 
 App.getComics = function() {
-  comics = JSON.parse(localStorage.getItem("comics"));
-  return comics;
+  App.comics = JSON.parse(localStorage.getItem("comics"));
+  return App.comics;
 };
 
 App.getComic = function(idComic) {
-  var result = $.grep(comics, function(e) {
+  var result = $.grep(App.comics, function(e) {
     return e.id == idComic;
   });
   return result[0];
 };
 
 App.getComicsLength = function() {
-  return comics.length;
+  return App.comics.length;
 };
