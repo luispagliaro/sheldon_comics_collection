@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"se",
+				"setGenre"
+			],
+			[
+				"set",
+				"setGenre"
+			],
+			[
 				"re",
 				"ready"
 			],
@@ -91,7 +99,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 4105,
+				"buffer_size": 4220,
 				"line_ending": "Unix"
 			}
 		},
@@ -99,7 +107,7 @@
 			"file": "app/js/controller.js",
 			"settings":
 			{
-				"buffer_size": 2308,
+				"buffer_size": 2975,
 				"line_ending": "Unix"
 			}
 		},
@@ -107,7 +115,7 @@
 			"file": "app/js/comic.js",
 			"settings":
 			{
-				"buffer_size": 764,
+				"buffer_size": 782,
 				"line_ending": "Unix"
 			}
 		},
@@ -116,14 +124,6 @@
 			"settings":
 			{
 				"buffer_size": 597,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/jQuery/Tabla/index.html",
-			"settings":
-			{
-				"buffer_size": 1420,
 				"line_ending": "Unix"
 			}
 		}
@@ -172,6 +172,8 @@
 	},
 	"file_history":
 	[
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/angular.min.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/jQuery/Tabla/index.html",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/jquery-ui/dialog.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/angular-lab-master/app/views/user.html",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/genre.js",
@@ -297,9 +299,7 @@
 		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Minifier/Minifier.sublime-settings",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/webapp/WEB-INF/tags/html/masthead.tag",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/lanews/stylesheets/masthead.css",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/lanews/assets/component/main.component.xml",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/lanews/assets/bucket/masthead.bucket.xml"
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/lanews/stylesheets/masthead.css"
 	],
 	"find":
 	{
@@ -510,15 +510,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 4105,
+						"buffer_size": 4220,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3677,
-								3677
+								3590,
+								3590
 							]
 						],
 						"settings":
@@ -577,7 +577,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 399.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -587,15 +587,15 @@
 					"file": "app/js/controller.js",
 					"settings":
 					{
-						"buffer_size": 2308,
+						"buffer_size": 2975,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1695,
-								1695
+								1437,
+								1437
 							]
 						],
 						"settings":
@@ -654,7 +654,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1058.0,
+						"translation.y": 586.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -664,15 +664,15 @@
 					"file": "app/js/comic.js",
 					"settings":
 					{
-						"buffer_size": 764,
+						"buffer_size": 782,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								339,
-								339
+								84,
+								84
 							]
 						],
 						"settings":
@@ -748,8 +748,8 @@
 						"selection":
 						[
 							[
-								534,
-								534
+								173,
+								173
 							]
 						],
 						"settings":
@@ -809,81 +809,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/jQuery/Tabla/index.html",
-					"settings":
-					{
-						"buffer_size": 1420,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
