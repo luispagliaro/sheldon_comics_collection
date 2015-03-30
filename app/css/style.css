@@ -1,0 +1,15 @@
+h1 {
+	margin-top: 10px;
+}
+
+.collapse.navbar-collapse {
+  padding-left: 0px;
+}
+
+.navbar-form.navbar-left {
+  padding-left: 0px;
+}
+
+.thumbnail {
+		margin-top: 15px;
+}
