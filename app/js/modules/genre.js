@@ -1,6 +1,6 @@
-var App = App || {};
+'use strict';
 
-App.genres = [];
+var App = App || {};
 
 App.Genre = function(name) {
   this.id = App.getGenresLength() + 1;
@@ -9,12 +9,12 @@ App.Genre = function(name) {
 
 App.setGenre = function(genre) {
   App.genres.push(genre);
-  localStorage.setItem("genres", JSON.stringify(App.genres));
-}
+  localStorage.setItem('genres', JSON.stringify(App.genres));
+};
 
 App.getGenres = function() {
-  App.genres = JSON.parse(localStorage.getItem("genres"));
-  //return App.genres;
+  App.genres = JSON.parse(localStorage.getItem('genres')) || [];
+  return App.genres;
 };
 
 App.getGenre = function(idGenre) {
@@ -25,5 +25,9 @@ App.getGenre = function(idGenre) {
 };
 
 App.getGenresLength = function() {
-  return App.genres.length;
+  if (App.genres !== null) {
+    return App.genres.length;
+  } else {
+    return 0;
+  }
 };

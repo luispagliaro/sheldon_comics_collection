@@ -1,3 +1,5 @@
+'use strict';
+
 var FormComic = {
   dialog: {
     modal: true,
@@ -22,11 +24,11 @@ var FormComic = {
   },
 
   addGenre: function() {
-    $('#select-genre').append('<option value="add">Add genre</option>');
+    $('#select-genre').append('<option value=\'add\'>Add genre</option>');
 
-    $('#select-genre').change(function(e) {
+    $('#select-genre').change(function() {
       if ($(this).val() === 'add') {
-        $('#select-genre').after("<input type=\"text\" class=\"form-control\" id=\"input-genre\" placeholder=\"Enter genre\" required>");
+        $('#select-genre').after('<input type=\'text\' class=\'form-control\' id=\'input-genre\' placeholder=\'Enter genre\' required>');
         $('#select-genre').hide();
       }
     });

@@ -1,6 +1,6 @@
-var App = App || {};
+'use strict';
 
-App.comics = [];
+var App = App || {};
 
 App.Comic = function(name, idGenre, description, quantity, images, videos) {
   this.id = App.getComicsLength() + 1;
@@ -14,12 +14,12 @@ App.Comic = function(name, idGenre, description, quantity, images, videos) {
 
 App.setComic = function(comic) {
   App.comics.push(comic);
-  localStorage.setItem("comics", JSON.stringify(App.comics));
-}
+  localStorage.setItem('comics', JSON.stringify(App.comics));
+};
 
 App.getComics = function() {
-  App.comics = JSON.parse(localStorage.getItem("comics"));
-  //return App.comics;
+  App.comics = JSON.parse(localStorage.getItem('comics')) || [];
+  return App.comics;
 };
 
 App.getComic = function(idComic) {
@@ -30,5 +30,9 @@ App.getComic = function(idComic) {
 };
 
 App.getComicsLength = function() {
-  return App.comics.length;
+  if (App.comics !== null) {
+    return App.comics.length;
+  } else {
+    return 0;
+  }
 };

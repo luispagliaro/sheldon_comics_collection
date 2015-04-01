@@ -4,16 +4,36 @@
 		"selected_items":
 		[
 			[
+				"to",
+				"toggleContent"
+			],
+			[
+				"sho",
+				"showAllComics"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"re",
+				"resetForm"
+			],
+			[
+				"ad",
+				"addGenre"
+			],
+			[
 				"se",
 				"setGenre"
 			],
 			[
 				"set",
 				"setGenre"
-			],
-			[
-				"re",
-				"ready"
 			],
 			[
 				"op",
@@ -99,31 +119,56 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 4220,
+				"buffer_size": 6298,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/js/controller.js",
+			"file": "app/js/modules/main-content.js",
 			"settings":
 			{
-				"buffer_size": 2975,
+				"buffer_size": 2578,
+				"line_ending": "Unix",
+				"name": "var MainContent = function ()"
+			}
+		},
+		{
+			"file": "app/js/modules/navigation.js",
+			"settings":
+			{
+				"buffer_size": 1509,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/js/comic.js",
+			"file": "app/js/modules/controller.js",
 			"settings":
 			{
-				"buffer_size": 782,
+				"buffer_size": 153,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/js/genre.js",
+			"file": "app/js/modules/form-comic.js",
 			"settings":
 			{
-				"buffer_size": 597,
+				"buffer_size": 2194,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/modules/comic.js",
+			"settings":
+			{
+				"buffer_size": 777,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/modules/genre.js",
+			"settings":
+			{
+				"buffer_size": 593,
 				"line_ending": "Unix"
 			}
 		}
@@ -172,11 +217,21 @@
 	},
 	"file_history":
 	[
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/gallery/js/demo.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/gallery/index.html",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/css/style.css",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/gallery/blueimp-bootstrap-image-gallery.jquery.json",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/comic.html",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/genre.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/controller.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/comic.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/StructuringJavaScript/RevealingModulePattern.html",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/StructuringJavaScript/Scripts/RevealingModulePattern.js",
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/StructuringJavaScript/Scripts/RevealingPrototypePattern.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/angular.min.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/jQuery/Tabla/index.html",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/jquery-ui/dialog.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/angular-lab-master/app/views/user.html",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/genre.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/HTML-CSS-JS Prettify/Default (Linux).sublime-keymap",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Downloads/Web UI Training/Ejercicios/Javascript/Agenda/js/script.js",
@@ -289,17 +344,7 @@
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Desktop/svgjsconfig.xml",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/naperville/images/logo.svg",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/frankpark/images/logo.svg",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/frankpark/images/logo (frank).svg",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/frankpark/svgjsconfig (frank).xml",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/subpa/chinews/frankpark/stylesheets/3ptnav.css",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/subpa/chinews/naperville/stylesheets/3ptnav.css",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/subpa/chinews/naperville/stylesheets/logos_svg.css",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/aurora/svgjsconfig.xml",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Minify/Minify.sublime-settings",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Minifier/Minifier.sublime-settings",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/webapp/WEB-INF/tags/html/masthead.tag",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/lanews/stylesheets/masthead.css"
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/frankpark/images/logo (frank).svg"
 	],
 	"find":
 	{
@@ -310,6 +355,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app",
 			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
 			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src",
 			"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web",
@@ -352,6 +398,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\"",
+			"            <",
+			"comisc-collection",
+			"comiscCollection",
 			"\"",
 			"=\"#\">",
 			"navbar",
@@ -475,11 +525,7 @@
 			"trb_outfit_categorySectionHeading_a",
 			"/home/colacilli",
 			"passenger",
-			"InsuranceCtrl",
-			"costingItem",
-			"availableExtras",
-			"setBasket",
-			"setBAsket"
+			"InsuranceCtrl"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -487,6 +533,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"'",
+			"comics-collection",
+			"comisc-collection",
 			"'",
 			"trb_navhead_weather",
 			"/home/likewise-open/GLOBANT/luis.pagliaro",
@@ -510,15 +559,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 4220,
+						"buffer_size": 6298,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3590,
-								3590
+								2115,
+								2115
 							]
 						],
 						"settings":
@@ -577,25 +626,104 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 912.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/js/controller.js",
+					"file": "app/js/modules/main-content.js",
 					"settings":
 					{
-						"buffer_size": 2975,
+						"buffer_size": 2578,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1437,
-								1437
+								2571,
+								2571
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"auto_name": "var MainContent = function ()",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/js/modules/navigation.js",
+					"settings":
+					{
+						"buffer_size": 1509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1297,
+								1297
 							]
 						],
 						"settings":
@@ -654,25 +782,177 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 586.0,
+						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/js/comic.js",
+					"buffer": 3,
+					"file": "app/js/modules/controller.js",
 					"settings":
 					{
-						"buffer_size": 782,
+						"buffer_size": 153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								84,
-								84
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/js/modules/form-comic.js",
+					"settings":
+					{
+						"buffer_size": 2194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1988,
+								1988
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1311.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/js/modules/comic.js",
+					"settings":
+					{
+						"buffer_size": 777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								454,
+								454
 							]
 						],
 						"settings":
@@ -737,19 +1017,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/js/genre.js",
+					"buffer": 6,
+					"file": "app/js/modules/genre.js",
 					"settings":
 					{
-						"buffer_size": 597,
+						"buffer_size": 593,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								173,
-								173
+								328,
+								328
 							]
 						],
 						"settings":
