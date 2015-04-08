@@ -42,9 +42,19 @@ p {
 }
 
 .thumbnail img {
-	height: 200px;
+  height: 200px;
 }
 
 .btn-sm {
-	margin-right: 5px;
+  margin-right: 5px;
+}
+
+#dialog-add-comic {
+  display: none;
+}
+
+.ui-autocomplete {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

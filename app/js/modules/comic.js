@@ -29,6 +29,13 @@ App.getComic = function(idComic) {
   return result[0];
 };
 
+App.getComicByName = function(comicName) {
+    var result = $.grep(App.comics, function(e) {
+    return e.name == comicName;
+  });
+  return result[0];
+}
+
 App.getComicsLength = function() {
   if (App.comics !== null) {
     return App.comics.length;

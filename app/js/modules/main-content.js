@@ -39,7 +39,7 @@ var MainContent = {
         blueimp.Gallery(comic.images, $('#blueimp-gallery').data());
       });
 
-      /*$('.video-gallery-button').on('click', function(event) {
+      $('.video-gallery-button').on('click', function(event) {
         event.preventDefault();
 
         var a = [];
@@ -50,33 +50,49 @@ var MainContent = {
         var comic = App.getComic(id);
 
         var lines = comic.videos.split(/\n/);
-        var texts = [];
+        var urls = [];
+        var videos = [];
 
         for (var i = 0; i < lines.length; i++) {
           if (/\S/.test(lines[i])) {
-            texts.push($.trim(lines[i]));
+            urls.push($.trim(lines[i]));
           }
         }
 
-        blueimp.Gallery(texts, $('#blueimp-gallery').data());
-      });*/
+        $.each(urls, function(index, url) {
+          var video = {
+            href: url,
+            type: 'text/html',
+            youtube: url.split('watch?v=')[1],
+            poster: 'http://img.youtube.com/vi/' + url.split('watch?v=')[1] + '/0.jpg'
+          };
 
-      /*$('.video-gallery-button').on('click', function(event) {
-        event.preventDefault();
-        blueimp.Gallery([{
-          title: 'LES TWINS - An Industry Ahead',
-          href: 'http://www.youtube.com/watch?v=zv9jHNwaV2E',
-          type: 'text/html',
-          youtube: 'zv9jHNwaV2E',
-          poster: 'http://img.youtube.com/vi/zv9jHNwaV2E/0.jpg'
-        }], $('#blueimp-gallery').data());
-      });*/
+          videos.push(video);
+        });
+
+        blueimp.Gallery(videos, $('#blueimp-gallery').data());
+      });
 
       $(document).tooltip();
     }
   },
 
+  facebookButton: function() {
+    $('#share_button').click(function(e) {
+      e.preventDefault();
+      FB.ui({
+        app_id: '970080289669999',
+        redirect_uri: 'index.html',
+        display: 'iframe',
+        method: 'share',
+        name: 'This is the content of the "name" field.',
+        href: 'index.html',
+      });
+    });
+  },
+
   init: function() {
     MainContent.loadComics();
+    MainContent.facebookButton();
   }
 };

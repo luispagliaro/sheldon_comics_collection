@@ -10,7 +10,22 @@ var Navigation = {
       });
 
       $('#input-search-comic').autocomplete({
-        source: Navigation.availableComics
+        source: Navigation.availableComics,
+
+        select: function(e, ui) {
+          var comic = App.getComicByName(ui.item.value);
+
+          if (comic != null) {
+            $('.comic-item').show();
+            $('.comic-item:not([id=' + comic.id + '])').hide(500);
+          }
+        },
+
+        change: function(event, ui) {
+          if ($("#input-search-comic").val() == '') {
+            $('.comic-item').show(500);
+          }
+        }
       });
     }
   },
@@ -37,7 +52,7 @@ var Navigation = {
 
   resetForm: function() {
     $('#button-add-comic').click(function() {
-      $('#form-add-comic').trigger("reset");
+      $('#form-add-comic').trigger('reset');
       $('#input-genre').hide();
       $('#select-genre').show();
     });
