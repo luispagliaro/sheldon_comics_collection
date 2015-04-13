@@ -4,28 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:url" content="" />
-  <meta property="og:site_name" content="Sheldon's Comics Collection" />
-  <meta property="og:title" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:type" content="product" />
   <title>Sheldon's Comics Collection</title>
   <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="js/jquery-ui-cupertino/jquery-ui.css">
   <link rel="stylesheet" href="js/gallery/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="js/gallery/css/bootstrap-image-gallery.min.css">
+  <link rel="stylesheet" href="css/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <div id="fb-root"></div>
-  <script src="js/facebook/fb-api.js"></script>
   <div class="container">
     <div class="panel panel-primary">
       <header class="panel-heading">
         <h1 class="text-center">Sheldon's Comics Collection</h1>
-        <div id="share_button">Share</div>
       </header>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -94,7 +88,6 @@
       </form>
     </div>
   </div>
-  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
   <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->
     <div class="slides"></div>
@@ -115,7 +108,7 @@
           </div>
           <div class="modal-body next"></div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left prev">
+            <button type="button" class="btn btn-primary pull-left prev">
               <i class="glyphicon glyphicon-chevron-left"></i> Previous
             </button>
             <button type="button" class="btn btn-primary next">
@@ -138,6 +131,7 @@
   <script src="js/modules/comic.js"></script>
   <script src="js/modules/genre.js"></script>
   <script src="js/modules/controller.js"></script>
+  <script src="js/facebook/fb-api.js"></script>
 </body>
 
 </html>
