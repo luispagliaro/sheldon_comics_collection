@@ -1,32 +1,32 @@
 'use strict';
 
-var App = App || {};
+var Controller = Controller || {};
 
-App.Genre = function(name) {
-  this.id = App.getGenresLength() + 1;
+Controller.Genre = function(name) {
+  this.id = Controller.getGenresLength() + 1;
   this.name = name;
 };
 
-App.setGenre = function(genre) {
-  App.genres.push(genre);
-  localStorage.setItem('genres', JSON.stringify(App.genres));
+Controller.setGenre = function(genre) {
+  Controller.genres.push(genre);
+  localStorage.setItem('genres', JSON.stringify(Controller.genres));
 };
 
-App.getGenres = function() {
-  App.genres = JSON.parse(localStorage.getItem('genres')) || [];
-  return App.genres;
+Controller.getGenres = function() {
+  Controller.genres = JSON.parse(localStorage.getItem('genres')) || [];
+  return Controller.genres;
 };
 
-App.getGenre = function(idGenre) {
-  var result = $.grep(App.genres, function(e) {
+Controller.getGenre = function(idGenre) {
+  var result = $.grep(Controller.genres, function(e) {
     return e.id == idGenre;
   });
   return result[0];
 };
 
-App.getGenresLength = function() {
-  if (App.genres !== null) {
-    return App.genres.length;
+Controller.getGenresLength = function() {
+  if (Controller.genres !== null) {
+    return Controller.genres.length;
   } else {
     return 0;
   }

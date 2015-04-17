@@ -1,28 +1,6 @@
 'use strict';
 
 var FormComic = {
-  dialog: {
-    modal: true,
-    width: 320,
-    height: 585,
-    position: {
-      my: 'center',
-      at: 'center',
-      of: window
-    },
-    resizable: false,
-    draggable: false,
-    closeOnEscape: true,
-    show: 'fade',
-    hide: 'fade',
-    autoOpen: false,
-    sticky: true
-  },
-
-  setDialog: function() {
-    $('#dialog-add-comic').dialog(FormComic.dialog);
-  },
-
   addGenre: function() {
     $('#select-genre').append('<option value=\'add\'>Add genre</option>');
 
@@ -36,6 +14,8 @@ var FormComic = {
 
   addComic: function() {
     $('#form-add-comic').submit(function(event) {
+      event.preventDefault();
+
       var files = $('#input-images')[0].files;
       var images = [];
       var total = files.length;
@@ -66,8 +46,8 @@ var FormComic = {
 
       function setGenre() {
         if ($('#input-genre').val() !== undefined) {
-          var genre = new App.Genre($('#input-genre').val());
-          App.setGenre(genre);
+          var genre = new Controller.Genre($('#input-genre').val());
+          Controller.setGenre(genre);
           idGenre = genre.id;
         } else {
           idGenre = $('#select-genre option:selected').val();
@@ -75,19 +55,19 @@ var FormComic = {
       }
 
       function onAllFilesLoaded() {
-        var comic = new App.Comic($('#input-name').val(), idGenre, $('#text-description').val(), $('#input-quantity').val(), images, $('#text-videos').val());
+        var comic = new Controller.Comic($('#input-name').val(), idGenre, $('#text-description').val(), $('#input-quantity').val(), images, $('#text-videos').val());
 
-        App.setComic(comic);
+        Controller.setComic(comic);
 
-        window.location.replace('index.html');
+        MainContent.loadComics();
+
+        $('#dialog-add-comic').modal('toggle');
+        //window.location.replace('index.html');
       }
-
-      event.preventDefault();
     });
   },
 
   init: function() {
-    FormComic.setDialog();
     FormComic.addGenre();
     FormComic.addComic();
   }

@@ -4,8 +4,8 @@ var Navigation = {
   availableComics: [],
 
   addComicsToSearch: function() {
-    if (App.comics !== null) {
-      $.each(App.comics, function(index, comic) {
+    if (Controller.comics !== null) {
+      $.each(Controller.comics, function(index, comic) {
         Navigation.availableComics.push(comic.name);
       });
 
@@ -13,7 +13,7 @@ var Navigation = {
         source: Navigation.availableComics,
 
         select: function(e, ui) {
-          var comic = App.getComicByName(ui.item.value);
+          var comic = Controller.getComicByName(ui.item.value);
 
           if (comic != null) {
             $('.comic-item').show();
@@ -31,17 +31,23 @@ var Navigation = {
   },
 
   addGenresToDropdown: function() {
-    if (App.genres !== null) {
-      $.each(App.genres, function(index, genre) {
-        $('#dropdown-genre-menu').append('<li><a href=\'#\'>' + genre.name + '</a></li>');
+    if (Controller.genres !== null) {
+      $.each(Controller.genres, function(index, genre) {
+        $('#dropdown-genre-menu').append('<li><a href=\'#\'>' + genre.name + ' <span class="genre-filter-selection glyphicon glyphicon-ok"></a></li>');
         $('#select-genre').append('<option value=\'' + genre.id + '\'>' + genre.name + '</option>');
       });
+
+      $('.genre-filter-selection').hide();
+      $('#dropdown-genre-menu li:contains(\'Show all \')').children('a').children('span').show();
     }
   },
 
   filterGenre: function() {
     $('#dropdown-genre-menu li').click(function() {
-      if ($(this).text() === 'Show all') {
+      $('.genre-filter-selection').hide();
+      $(this).children('a').children('span').show();
+
+      if ($(this).text() === 'Show all ') {
         $('#comics-collection .comic-item').show(500);
       } else {
         $('#comics-collection .comic-item').show(500);
@@ -56,6 +62,27 @@ var Navigation = {
       $('#input-genre').hide();
       $('#select-genre').show();
     });
+    $('#button-login').click(function() {
+      $('#form-login').trigger('reset');
+    });
+  },
+
+  userLogedIn: function(status) {
+    if (status === 'logedin') {
+      $('#button-login').hide();
+      $('#button-add-comic').show();
+      $('#button-logout').show();
+    } else {
+      $('#button-login').show();
+      $('#button-add-comic').hide();
+      $('#button-logout').hide();
+    }
+  },
+
+  logout: function() {
+    $('#button-logout').click(function() {
+      Logout.logout();
+    });
   },
 
   init: function() {
@@ -63,5 +90,6 @@ var Navigation = {
     Navigation.addGenresToDropdown();
     Navigation.filterGenre();
     Navigation.resetForm();
+    Navigation.logout();
   }
 };

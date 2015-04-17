@@ -1,9 +1,9 @@
 'use strict';
 
-var App = App || {};
+var Controller = Controller || {};
 
-App.Comic = function(name, idGenre, description, quantity, images, videos) {
-  this.id = App.getComicsLength() + 1;
+Controller.Comic = function(name, idGenre, description, quantity, images, videos) {
+  this.id = Controller.getComicsLength() + 1;
   this.name = name;
   this.idGenre = idGenre;
   this.description = description;
@@ -12,33 +12,33 @@ App.Comic = function(name, idGenre, description, quantity, images, videos) {
   this.videos = videos;
 };
 
-App.setComic = function(comic) {
-  App.comics.push(comic);
-  localStorage.setItem('comics', JSON.stringify(App.comics));
+Controller.setComic = function(comic) {
+  Controller.comics.push(comic);
+  localStorage.setItem('comics', JSON.stringify(Controller.comics));
 };
 
-App.getComics = function() {
-  App.comics = JSON.parse(localStorage.getItem('comics')) || [];
-  return App.comics;
+Controller.getComics = function() {
+  Controller.comics = JSON.parse(localStorage.getItem('comics')) || [];
+  return Controller.comics;
 };
 
-App.getComic = function(idComic) {
-  var result = $.grep(App.comics, function(e) {
+Controller.getComic = function(idComic) {
+  var result = $.grep(Controller.comics, function(e) {
     return e.id == idComic;
   });
   return result[0];
 };
 
-App.getComicByName = function(comicName) {
-    var result = $.grep(App.comics, function(e) {
+Controller.getComicByName = function(comicName) {
+    var result = $.grep(Controller.comics, function(e) {
     return e.name == comicName;
   });
   return result[0];
 }
 
-App.getComicsLength = function() {
-  if (App.comics !== null) {
-    return App.comics.length;
+Controller.getComicsLength = function() {
+  if (Controller.comics !== null) {
+    return Controller.comics.length;
   } else {
     return 0;
   }
