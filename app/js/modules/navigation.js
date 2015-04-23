@@ -75,17 +75,17 @@ var Navigation = {
     if (status === 'logedin') {
       $('#button-login').hide();
       $('#button-add-comic').show();
-      $('#button-logoff').show();
+      $('#button-logout').show();
     } else {
       $('#button-login').show();
       $('#button-add-comic').hide();
-      $('#button-logoff').hide();
+      $('#button-logout').hide();
     }
   },
 
-  logoff: function() {
-    $('#button-logoff').click(function() {
-      Logout.logoff();
+  logout: function() {
+    $('#button-logout').click(function() {
+      Logout.logout();
     });
   },
 
@@ -95,6 +95,6 @@ var Navigation = {
     Navigation.addComicButtonClick();
     Navigation.loginButtonClick();
     Navigation.filterGenre();
-    Navigation.logoff();
+    Navigation.logout();
   }
 };
