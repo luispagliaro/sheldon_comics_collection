@@ -59,7 +59,7 @@ var MainContent = {
 
       $(document).tooltip();
 
-      Login.checkLogin();
+      LogInOut.checkLogin();
     }
   },
 
@@ -159,6 +159,8 @@ var MainContent = {
       $(this).closest('div').hide(500, function() {
         $(this).remove();
       });
+
+      MainContent.showAlert('Comic deleted successfully.', '#alert-ok');
     });
   },
 
@@ -193,6 +195,14 @@ var MainContent = {
     }
 
     return Controller.getComic(id);
+  },
+
+  showAlert: function(message, selector) {
+    $(selector).text(message);
+
+    $(selector).fadeIn(1000, function() {
+      $(selector).delay(1500).fadeOut(3000);
+    });
   },
 
   init: function() {

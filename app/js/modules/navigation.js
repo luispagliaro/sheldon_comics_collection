@@ -85,7 +85,7 @@ var Navigation = {
 
   logout: function() {
     $('#button-logout').click(function() {
-      Logout.logout();
+      LogInOut.logout();
     });
   },
 

@@ -4,7 +4,7 @@ This web application was developed for GlobantU courses. The app is a comic coll
 
 ### Functionalities
 
-- Storage: for storing the data I used local storage. For the purposes of this course, it wasn't specified how to develop the backend functionality so I thought it would be better and faster to use local storage, and also it's a feature of HTML5 which is a requirements of the course.
+- Storage: for storing the data I used local storage. For the purposes of this course, it wasn't specified how to develop the backend functionality so I thought it would be better and faster to use local storage, and also it's a feature of HTML5 which is a requirements for passing the course.
 
 - Login/Logout: Dr. Sheldon Cooper can sign in to his account using his credentials (user: sheldon, pass: password1234). Loging in will allow you to add, modify or delete comics. This data is stored in the local storage as an MD5 encrypted string. So when when you sign in, the input text for the user and pasword are submitted and encrypted to MD5, if the encrypted string matches the string stored in local storage, it grants access. Since the data is stored in local storage, there is not much security and it is not recommended to store user data in local storage, but for functionality purposes I decided to do it this way.
 

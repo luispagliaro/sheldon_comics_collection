@@ -7,5 +7,5 @@ $(document).ready(function() {
   MainContent.init();
   Navigation.init();
   FormComic.init();
-  Login.init();
+  LogInOut.init();
 });

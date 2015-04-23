@@ -17,8 +17,8 @@
 <body>
   <div id="fb-root"></div>
   <div class="container">
-    <div id="alert-login-ok" class="alert alert-success text-center" role="alert">Welcome back, Dr. Sheldon Cooper.</div>
-    <div id="alert-login-fail" class="alert alert-danger text-center" role="alert">Username or password incorrect.</div>
+    <div id="alert-ok" class="alert alert-success text-center" role="alert"></div>
+    <div id="alert-fail" class="alert alert-danger text-center" role="alert"></div>
     <div class="panel panel-primary">
       <header class="panel-heading">
         <h1 class="text-center">Sheldon's Comics Collection</h1>
@@ -48,9 +48,9 @@
               </li>
             </ul>
             <div class="nav navbar-nav navbar-right">
-              <button id="button-login" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-login">Login</button>
+              <button id="button-login" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-login">Log in</button>
               <button id="button-add-comic" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-add-comic">Add comic</button>
-              <button id="button-logout" type="button" class="btn btn-default navbar-btn">Logout</button>
+              <button id="button-logout" type="button" class="btn btn-default navbar-btn">Log out</button>
             </div>
           </div>
         </div>
@@ -165,8 +165,7 @@
   <script src="js/gallery/js/jquery.blueimp-gallery.min.js"></script>
   <script src="js/gallery/js/bootstrap-image-gallery.min.js"></script>
   <script src="js/bootstrap/js/bootstrap-filestyle.min.js"></script>
-  <script src="js/modules/logout.js"></script>
-  <script src="js/modules/login.js"></script>
+  <script src="js/modules/login-out.js"></script>
   <script src="js/modules/main-content.js"></script>
   <script src="js/modules/navigation.js"></script>
   <script src="js/modules/form-comic.js"></script>

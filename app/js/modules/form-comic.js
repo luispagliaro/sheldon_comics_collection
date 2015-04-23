@@ -102,6 +102,8 @@ var FormComic = {
           var comic = new Controller.Comic($('#input-name').val(), setGenre(), $('#text-description').val(), $('#input-quantity').val(), images, $('#text-videos').val());
 
           Controller.setComic(comic);
+
+          MainContent.showAlert('Comic added successfully.', '#alert-ok');
         } else {
           var comics = Controller.getComics();
 
@@ -118,6 +120,8 @@ var FormComic = {
           }
 
           Controller.setComics(comics);
+
+          MainContent.showAlert('Comic modified successfully.', '#alert-ok');
         }
         $('#dialog-add-comic').modal('toggle');
 
