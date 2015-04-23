@@ -1,8 +1,8 @@
-# Sheldon's Comics Collection
+## Sheldon's Comics Collection
 
 This web application was developed for GlobantU courses. The app is a comic collection, in which Dr. Sheldon Cooper can add, modify and delete comics.
 
-# Functionalities
+### Functionalities
 
 - Storage: for storing the data I used local storage. For the purposes of this course, it wasn't specified how to develop the backend functionality so I thought it would be better and faster to use local storage, and also it's a feature of HTML5 which is a requirements of the course.
 
