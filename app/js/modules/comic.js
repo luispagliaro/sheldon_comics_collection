@@ -3,7 +3,7 @@
 var Controller = Controller || {};
 
 Controller.Comic = function(name, idGenre, description, quantity, images, videos) {
-  this.id = Controller.getComicsLength() + 1;
+  this.id = Controller.getComics().slice(-1)[0] ? Controller.getComics().slice(-1)[0].id + 1 : 1;
   this.name = name;
   this.idGenre = idGenre;
   this.description = description;
@@ -17,8 +17,17 @@ Controller.setComic = function(comic) {
   localStorage.setItem('comics', JSON.stringify(Controller.comics));
 };
 
+Controller.setComics = function(comics) {
+  Controller.comics = comics;
+  localStorage.setItem('comics', JSON.stringify(Controller.comics));
+};
+
 Controller.getComics = function() {
-  Controller.comics = JSON.parse(localStorage.getItem('comics')) || [];
+  if (localStorage.getItem('comics') === "") {
+    localStorage.setItem('comics', JSON.stringify([]));
+  }
+  
+  Controller.comics = JSON.parse(localStorage.getItem('comics'));
   return Controller.comics;
 };
 
@@ -30,11 +39,11 @@ Controller.getComic = function(idComic) {
 };
 
 Controller.getComicByName = function(comicName) {
-    var result = $.grep(Controller.comics, function(e) {
+  var result = $.grep(Controller.comics, function(e) {
     return e.name == comicName;
   });
   return result[0];
-}
+};
 
 Controller.getComicsLength = function() {
   if (Controller.comics !== null) {
@@ -42,4 +51,8 @@ Controller.getComicsLength = function() {
   } else {
     return 0;
   }
+};
+
+Controller.initComics = function() {
+  localStorage.setItem('comics', []);
 };

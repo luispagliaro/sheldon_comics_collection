@@ -1,16 +1,16 @@
 'use strict';
 
 var Navigation = {
-  availableComics: [],
-
   addComicsToSearch: function() {
-    if (Controller.comics !== null) {
+    var availableComics = [];
+
+    if (Controller.comics !== []) {
       $.each(Controller.comics, function(index, comic) {
-        Navigation.availableComics.push(comic.name);
+        availableComics.push(comic.name);
       });
 
       $('#input-search-comic').autocomplete({
-        source: Navigation.availableComics,
+        source: availableComics,
 
         select: function(e, ui) {
           var comic = Controller.getComicByName(ui.item.value);
@@ -30,12 +30,15 @@ var Navigation = {
     }
   },
 
-  addGenresToDropdown: function() {
-    if (Controller.genres !== null) {
+  addGenresToFilterDropdown: function() {
+    if (Controller.genres.length != 0) {
+      $('#dropdown-genre-menu').empty();
+
       $.each(Controller.genres, function(index, genre) {
         $('#dropdown-genre-menu').append('<li><a href=\'#\'>' + genre.name + ' <span class="genre-filter-selection glyphicon glyphicon-ok"></a></li>');
-        $('#select-genre').append('<option value=\'' + genre.id + '\'>' + genre.name + '</option>');
       });
+
+      $('#dropdown-genre-menu').append('<li><a href=\'#\'>Show all <span class="genre-filter-selection glyphicon glyphicon-ok"></a></li>');
 
       $('.genre-filter-selection').hide();
       $('#dropdown-genre-menu li:contains(\'Show all \')').children('a').children('span').show();
@@ -56,12 +59,13 @@ var Navigation = {
     });
   },
 
-  resetForm: function() {
+  addComicButtonClick: function() {
     $('#button-add-comic').click(function() {
-      $('#form-add-comic').trigger('reset');
-      $('#input-genre').hide();
-      $('#select-genre').show();
+      FormComic.setFormAddComic();
     });
+  },
+
+  loginButtonClick: function() {
     $('#button-login').click(function() {
       $('#form-login').trigger('reset');
     });
@@ -87,9 +91,10 @@ var Navigation = {
 
   init: function() {
     Navigation.addComicsToSearch();
-    Navigation.addGenresToDropdown();
+    Navigation.addGenresToFilterDropdown();
+    Navigation.addComicButtonClick();
+    Navigation.loginButtonClick();
     Navigation.filterGenre();
-    Navigation.resetForm();
     Navigation.logout();
   }
 };

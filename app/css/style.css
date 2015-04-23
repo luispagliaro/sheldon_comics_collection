@@ -80,6 +80,14 @@ p {
   display: none;
 }
 
+#checkbox-change-image,
+label[for=checkbox-change-image],
+#input-id,
+label[for=input-id],
+{
+  display: none;
+}
+
 .alert {
   position: absolute;
   left: 0;

@@ -2,7 +2,7 @@
 
 var MainContent = {
   loadComics: function() {
-    if (Controller.comics !== null) {
+    if (Controller.comics !== []) {
       $('#comics-collection').empty();
 
       $.each(Controller.comics, function(index, comic) {
@@ -21,7 +21,30 @@ var MainContent = {
           title = comic.name;
         }
 
-        $('#comics-collection').append('<div id=\'' + comic.id + '\' class=\'comic-item col-xs-6 col-sm-4 col-md-3\'><h4>' + title + '</h4><span class=\'label label-success\' title=\'Genre\'>' + Controller.getGenre(comic.idGenre).name + '</span>' + ' ' + '<span class=\'badge\' title=\'Quantity\'>' + comic.quantity + itemLabel + '</span><span class="glyphicon glyphicon-remove-circle pull-right" title=\'Remove comic\' aria-hidden="true"></span><span class="glyphicon glyphicon-edit pull-right" title=\'Modify comic\' aria-hidden="true"></span><div class=\'thumbnail\'><img src=\'' + comic.images[0] + '\' class=\'img-responsive\' alt=\'' + comic.description + '\'/><p class=\'caption\'>' + comic.description + '</p><button class=\'btn btn-default btn-sm image-gallery-button\' title=\'Image gallery\' type=\'button\' id=\'igallery-' + comic.id + '\'><i class=\'glyphicon glyphicon-picture\'></i></button><button id=\'vgallery-' + comic.id + '\' title=\'Video gallery\' type=\'button\' class=\'btn btn-default btn-sm video-gallery-button\'><i class=\'glyphicon glyphicon-film\'></i></button><a id=\'share-' + comic.id + '\' class=\'btn btn-social btn-xs btn-vk btn-share\'><i class=\'fa fa-facebook\'></i>Share</a></div></div>');
+        var comicItem = '';
+
+        comicItem += '<div id="' + comic.id + '" class="comic-item col-xs-6 col-sm-4 col-md-3">';
+        comicItem += '<h4>' + title + '</h4>';
+        comicItem += '<span class="label label-success" title="Genre">' + Controller.getGenre(comic.idGenre).name + '</span> ';
+        comicItem += '<span class="badge" title="Quantity">' + comic.quantity + itemLabel + '</span>';
+        comicItem += '<span class="glyphicon glyphicon-remove-circle pull-right" title="Remove comic" aria-hidden="true"></span>';
+        comicItem += '<span class="glyphicon glyphicon-edit pull-right" title="Modify comic" aria-hidden="true" data-toggle="modal" data-target="#dialog-add-comic"></span>';
+        comicItem += '<div class="thumbnail">';
+        comicItem += '<img src="' + comic.images[0] + '" class="img-responsive" alt="' + comic.description + '"/>';
+        comicItem += '<p class="caption">' + comic.description + '</p>';
+        comicItem += '<button class="btn btn-default btn-sm image-gallery-button" title="Image gallery" type="button" id="igallery-' + comic.id + '">';
+        comicItem += '<i class="glyphicon glyphicon-picture"></i>';
+        comicItem += '</button>';
+        comicItem += '<button id="vgallery-' + comic.id + '" title="Video gallery" type="button" class="btn btn-default btn-sm video-gallery-button">';
+        comicItem += '<i class="glyphicon glyphicon-film"></i>';
+        comicItem += '</button>';
+        comicItem += '<a id="share-' + comic.id + '" class="btn btn-social btn-xs btn-vk btn-share">';
+        comicItem += '<i class="fa fa-facebook"></i>Share';
+        comicItem += '</a>';
+        comicItem += '</div>';
+        comicItem += '</div>';
+
+        $('#comics-collection').append(comicItem);
 
         /*fb comments 
 
@@ -35,6 +58,8 @@ var MainContent = {
       });
 
       $(document).tooltip();
+
+      Login.checkLogin();
     }
   },
 
@@ -99,17 +124,9 @@ var MainContent = {
     });
   },
 
-  getComic: function(el) {
-    var id = el.attr('id');
-    id = id.substr(id.indexOf('-') + 1, id.length - 1);
-
-    return Controller.getComic(id);
-  },
-
   userLogedIn: function(status) {
     if (status === 'logedin') {
-      $('.glyphicon-remove-circle').hide();
-      $('.glyphicon-edit').hide();
+      MainContent.modifyComic();
 
       $('.comic-item').each(function() {
         $(this).hover(function() {
@@ -127,6 +144,34 @@ var MainContent = {
     }
   },
 
+  deleteComic: function() {
+    $('.glyphicon-remove-circle').on('click', function() {
+      var comic = MainContent.getComic($(this).closest('div'));
+
+      var comics = Controller.getComics();
+
+      comics = $.grep(comics, function(e) {
+        return e.id != comic.id;
+      });
+
+      Controller.setComics(comics);
+
+      $(this).closest('div').hide(500, function() {
+        $(this).remove();
+      });
+    });
+  },
+
+  modifyComic: function() {
+    $('.glyphicon-edit').on('click', function() {
+      FormComic.setFormModifyComic();
+
+      var comic = MainContent.getComic($(this).closest('div'));
+
+      FormComic.loadComicData(comic.id, comic.name, comic.idGenre, comic.description, comic.quantity, comic.videos);
+    });
+  },
+
   /*fbComments: function() {
     $('.btn-comments').on('click', function(e) {
       e.preventDefault();
@@ -140,10 +185,22 @@ var MainContent = {
     });
   },*/
 
+  getComic: function(el) {
+    var id = el.attr('id');
+
+    if (id.indexOf('-') !== -1) {
+      id = id.substr(id.indexOf('-') + 1, id.length - 1);
+    }
+
+    return Controller.getComic(id);
+  },
+
   init: function() {
     MainContent.loadComics();
     MainContent.imageVideoGallery();
     MainContent.shareOnFB();
+    MainContent.deleteComic();
+    MainContent.modifyComic();
     //MainContent.fbComments();
   }
 };
