@@ -13,7 +13,7 @@ Controller.setGenre = function(genre) {
 };
 
 Controller.getGenres = function() {
-  if (localStorage.getItem('genres') === "") {
+  if (localStorage.getItem('genres') === '') {
     localStorage.setItem('genres', JSON.stringify([]));
   }
 
@@ -34,8 +34,4 @@ Controller.getGenresLength = function() {
   } else {
     return 0;
   }
-};
-
-Controller.initGenres = function() {
-  localStorage.setItem('genres', []);
 };

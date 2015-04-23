@@ -18,7 +18,7 @@ var FormComic = {
   },
 
   addGenresToSelect: function() {
-    if (Controller.genres.length != 0) {
+    if (Controller.genres.length !== 0) {
       $('#select-genre').empty();
 
       $('#select-genre').append('<option value=\'\' disabled>Select an option</option>');

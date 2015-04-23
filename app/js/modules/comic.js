@@ -23,10 +23,10 @@ Controller.setComics = function(comics) {
 };
 
 Controller.getComics = function() {
-  if (localStorage.getItem('comics') === "") {
+  if (localStorage.getItem('comics') === '') {
     localStorage.setItem('comics', JSON.stringify([]));
   }
-  
+
   Controller.comics = JSON.parse(localStorage.getItem('comics'));
   return Controller.comics;
 };
@@ -51,8 +51,4 @@ Controller.getComicsLength = function() {
   } else {
     return 0;
   }
-};
-
-Controller.initComics = function() {
-  localStorage.setItem('comics', []);
 };

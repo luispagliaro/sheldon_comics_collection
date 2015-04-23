@@ -15,14 +15,14 @@ var Navigation = {
         select: function(e, ui) {
           var comic = Controller.getComicByName(ui.item.value);
 
-          if (comic != null) {
+          if (comic !== null) {
             $('.comic-item').show();
             $('.comic-item:not([id=' + comic.id + '])').hide(500);
           }
         },
 
         change: function(event, ui) {
-          if ($("#input-search-comic").val() == '') {
+          if ($("#input-search-comic").val() === '') {
             $('.comic-item').show(500);
           }
         }
@@ -31,7 +31,7 @@ var Navigation = {
   },
 
   addGenresToFilterDropdown: function() {
-    if (Controller.genres.length != 0) {
+    if (Controller.genres.length !== 0) {
       $('#dropdown-genre-menu').empty();
 
       $.each(Controller.genres, function(index, genre) {
@@ -75,17 +75,17 @@ var Navigation = {
     if (status === 'logedin') {
       $('#button-login').hide();
       $('#button-add-comic').show();
-      $('#button-logout').show();
+      $('#button-logoff').show();
     } else {
       $('#button-login').show();
       $('#button-add-comic').hide();
-      $('#button-logout').hide();
+      $('#button-logoff').hide();
     }
   },
 
-  logout: function() {
-    $('#button-logout').click(function() {
-      Logout.logout();
+  logoff: function() {
+    $('#button-logoff').click(function() {
+      Logout.logoff();
     });
   },
 
@@ -95,6 +95,6 @@ var Navigation = {
     Navigation.addComicButtonClick();
     Navigation.loginButtonClick();
     Navigation.filterGenre();
-    Navigation.logout();
+    Navigation.logoff();
   }
 };
