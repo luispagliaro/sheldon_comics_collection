@@ -2,7 +2,7 @@
 
 var MainContent = {
   loadComics: function() {
-    if (Controller.comics !== []) {
+    if (Controller.comics.length !== 0) {
       $('#comics-collection').empty();
 
       $.each(Controller.comics, function(index, comic) {
@@ -59,6 +59,10 @@ var MainContent = {
 
       $(document).tooltip();
 
+      MainContent.imageVideoGallery();
+      MainContent.shareOnFB();
+      Navigation.addComicsToSearch();
+
       LogInOut.checkLogin();
     }
   },
@@ -67,8 +71,6 @@ var MainContent = {
     $('.image-gallery-button').on('click', function(event) {
       event.preventDefault();
 
-      var a = [];
-
       var comic = MainContent.getComic($(this));
 
       blueimp.Gallery(comic.images, $('#blueimp-gallery').data());
@@ -76,8 +78,6 @@ var MainContent = {
 
     $('.video-gallery-button').on('click', function(event) {
       event.preventDefault();
-
-      var a = [];
 
       var comic = MainContent.getComic($(this));
 
@@ -126,7 +126,10 @@ var MainContent = {
 
   userLogedIn: function(status) {
     if (status === 'logedin') {
+      $('#add-comic-text').show();
+
       MainContent.modifyComic();
+      MainContent.deleteComic();
 
       $('.comic-item').each(function() {
         $(this).hover(function() {
@@ -138,6 +141,7 @@ var MainContent = {
         });
       });
     } else {
+      $('#add-comic-text').hide();
       $('.comic-item').unbind('mouseenter mouseleave');
       $('.glyphicon-remove-circle').hide();
       $('.glyphicon-edit').hide();
@@ -151,7 +155,7 @@ var MainContent = {
       var comics = Controller.getComics();
 
       comics = $.grep(comics, function(e) {
-        return e.id != comic.id;
+        return e.id !== comic.id;
       });
 
       Controller.setComics(comics);
@@ -207,10 +211,6 @@ var MainContent = {
 
   init: function() {
     MainContent.loadComics();
-    MainContent.imageVideoGallery();
-    MainContent.shareOnFB();
-    MainContent.deleteComic();
-    MainContent.modifyComic();
     //MainContent.fbComments();
   }
 };

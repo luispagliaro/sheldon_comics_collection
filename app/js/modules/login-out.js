@@ -23,7 +23,7 @@ var LogInOut = {
 
         LogInOut.checkLogin();
 
-        MainContent.showAlert('Welcome back, Dr. Sheldon Cooper.', '#alert-ok');
+        MainContent.showAlert('Welcome, Dr. Sheldon Cooper.', '#alert-ok');
 
         LogInOut.reproduceSound('login');
       } else {

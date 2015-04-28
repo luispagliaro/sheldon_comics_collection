@@ -18,6 +18,10 @@ p {
   }
 }
 
+#add-comic-text {
+  display: none;
+}
+
 .navbar {
   margin-bottom: 0px;
 }
@@ -76,6 +80,14 @@ p {
   width: 320px;
 }
 
+#blueimp-gallery .modal-header {
+  border-bottom: unset;
+}
+
+#blueimp-gallery .modal-footer {
+  border-top: unset;
+}
+
 #button-add-comic {
   display: none;
 }
@@ -101,5 +113,9 @@ label[for=input-id],
 .glyphicon-edit {
   top: 3px;
   padding-left: 5px;
+  display: none;
+}
+
+#button-logout {
   display: none;
 }

@@ -8,24 +8,39 @@ var FormComic = {
   selectGenreChange: function() {
     $('#select-genre').change(function() {
       if ($(this).val() === 'add') {
-        $('#select-genre').after('<input type="text" class="form-control" id="input-genre" placeholder="Enter genre" required>');
-        $('#input-genre').prop('disabled', false);
-
-        $('#select-genre').prop('disabled', true);
-        $('#select-genre').hide();
+        FormComic.showInputGenre();
       }
     });
   },
 
-  addGenresToSelect: function() {
-    if (Controller.genres.length !== 0) {
-      $('#select-genre').empty();
+  showInputGenre: function() {
+    var select = $('#select-genre');
 
-      $('#select-genre').append('<option value=\'\' disabled>Select an option</option>');
+    select.after('<input type="text" class="form-control" id="input-genre" placeholder="Enter genre" maxlength="20" required>');
+    select.prop('disabled', false);
+
+    select.prop('disabled', true);
+    select.hide();
+
+    select.parent().removeClass('has-success');
+    select.parent().removeClass('has-error');
+
+    FormComic.validateGenreExists();
+    FormComic.formValidation();
+  },
+
+  addGenresToSelect: function() {
+    var select = $('#select-genre');
+    select.empty();
+
+    if (Controller.genres.length !== 0) {
+      select.append('<option value=\'\' disabled>Select an option</option>');
 
       $.each(Controller.genres, function(index, genre) {
-        $('#select-genre').append('<option value=\'' + genre.id + '\'>' + genre.name + '</option>');
+        select.append('<option value=\'' + genre.id + '\'>' + genre.name + '</option>');
       });
+    } else {
+      FormComic.showInputGenre();
     }
 
     FormComic.addGenre();
@@ -33,25 +48,25 @@ var FormComic = {
 
   setFormAddComic: function() {
     $('#form-add-comic').trigger('reset');
-    $('#input-genre').prop('disabled', true);
-    $('#input-genre').hide();
-    $('#select-genre').prop('disabled', false);
-    $('#select-genre').show();
+    $('#input-genre').prop('disabled', true).hide();
+    $('#select-genre').prop('disabled', false).show();
     $('#checkbox-change-image').hide();
     $('label[for=\'checkbox-change-image\']').hide();
     $('#input-images').prop('disabled', false);
     FormComic.addGenresToSelect();
+    FormComic.formTitle('Add comic');
+    FormComic.cleanValidations();
   },
 
   setFormModifyComic: function() {
-    $('#input-genre').prop('disabled', true);
-    $('#input-genre').hide();
-    $('#select-genre').prop('disabled', false);
-    $('#select-genre').show();
-    $('#checkbox-change-image').show();
+    $('#input-genre').prop('disabled', true).hide();
+    $('#select-genre').prop('disabled', false).show();
+    $('#checkbox-change-image').prop('checked', false).show();
     $('label[for=\'checkbox-change-image\']').show();
     $('#input-images').prop('disabled', true);
     FormComic.addGenresToSelect();
+    FormComic.formTitle('Modify comic');
+    FormComic.cleanValidations();
   },
 
   addComic: function() {
@@ -87,7 +102,7 @@ var FormComic = {
       }
 
       function setGenre() {
-        if ($('#input-genre').val() !== undefined) {
+        if ($('#select-genre').prop('disabled')) {
           var genre = new Controller.Genre($('#input-genre').val());
           Controller.setGenre(genre);
 
@@ -95,11 +110,13 @@ var FormComic = {
         } else {
           return $('#select-genre option:selected').val();
         }
+
+        Navigation.addGenresToFilterDropdown();
       }
 
       function onAllFilesLoaded() {
         if ($('#add-comic-label').text() === 'Add comic') {
-          var comic = new Controller.Comic($('#input-name').val(), setGenre(), $('#text-description').val(), $('#input-quantity').val(), images, $('#text-videos').val());
+          var comic = new Controller.Comic($('#input-name').val(), setGenre(), $('#text-description').val().replace(/\n\r?/g, '<br />'), $('#input-quantity').val(), images, $('#text-videos').val());
 
           Controller.setComic(comic);
 
@@ -107,11 +124,13 @@ var FormComic = {
         } else {
           var comics = Controller.getComics();
 
-          var index = $('#input-id').val() - 1;
+          var comic = Controller.getComic($('#input-id').val());
+
+          var index = $.inArray(comic, comics);
 
           comics[index].name = $('#input-name').val();
           comics[index].idGenre = setGenre();
-          comics[index].description = $('#text-description').val();
+          comics[index].description = $('#text-description').val().replace(/\n\r?/g, '<br />');
           comics[index].quantity = $('#input-quantity').val();
           comics[index].videos = $('#text-videos').val();
 
@@ -149,13 +168,8 @@ var FormComic = {
     $('#text-videos').val(videos);
   },
 
-  formTitle: function() {
-    $('#button-add-comic').on('click', function() {
-      $('#dialog-add-comic #add-comic-label').text('Add comic');
-    });
-    $('.glyphicon-edit').on('click', function() {
-      $('#dialog-add-comic #add-comic-label').text('Modify comic');
-    });
+  formTitle: function(title) {
+    $('#dialog-add-comic #add-comic-label').text(title);
   },
 
   imageUploadInput: function() {
@@ -168,11 +182,123 @@ var FormComic = {
     });
   },
 
+  validateComicExists: function() {
+    var errorMessage = 'Comic already exists.';
+    var hasError = false;
+
+    $('#input-name').on('input change propertychange', function() {
+      var comic = Controller.getComicByName($(this).val());
+
+      if ($('#add-comic-label').text() === 'Add comic') {
+        if (comic !== undefined) {
+          hasError = true;
+        }
+      }
+
+      if (typeof this.setCustomValidity === 'function') {
+        this.setCustomValidity(hasError ? errorMessage : '');
+      } else {
+        $(this).toggleClass('error', !!hasError);
+        $(this).toggleClass('ok', !hasError);
+      }
+    });
+  },
+
+  validateGenreExists: function() {
+    var errorMessage = 'Genre already exists.';
+
+    $('#input-genre').on('input change propertychange', function() {
+      var genre = Controller.getGenreByName($(this).val());
+
+      if (genre !== undefined) {
+        var hasError = true;
+      }
+
+      if (typeof this.setCustomValidity === 'function') {
+        this.setCustomValidity(hasError ? errorMessage : '');
+      }
+    });
+  },
+
+  validateVideosUrl: function() {
+    var errorMessage = 'There is an invalid YouTube URL.';
+
+    $('#text-videos').on('input change propertychange', function() {
+      var patternRegex = new RegExp(/^http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/);
+
+      var videos = $('#text-videos').val();
+
+      var lines = videos.split(/\n/);
+      var urls = [];
+      var errors = 0;
+      var hasError = false;
+
+      for (var i = 0; i < lines.length; i++) {
+        if (/\S/.test(lines[i])) {
+          urls.push($.trim(lines[i]));
+        }
+      }
+
+      $.each(urls, function(index, url) {
+        if (!url.match(patternRegex)) {
+          errors++;
+        }
+      });
+
+      hasError = (errors > 0) ? true : false;
+
+      if (typeof this.setCustomValidity === 'function') {
+        this.setCustomValidity(hasError ? errorMessage : '');
+      }
+    });
+  },
+
+  formValidation: function() {
+    $('#form-add-comic input, #form-add-comic select, #form-add-comic textarea').each(function(index) {
+      var input = $(this);
+
+      input.on('input', function() {
+        if (input[0].checkValidity() === false) {
+          addStatusClass('#' + input.attr('id'), 'success');
+        } else {
+          addStatusClass('#' + input.attr('id'), 'error');
+        }
+      });
+    });
+
+    function addStatusClass(el, status) {
+      var parent = $(el).parent();
+
+      if (status === 'success') {
+        parent.removeClass('has-success').addClass('has-error');
+        $(el).next().text($(el)[0].validationMessage);
+      } else {
+        parent.removeClass('has-error').addClass('has-success');
+        $(el).next().text('');
+      }
+    }
+  },
+
+  cleanValidations: function() {
+    $('#form-add-comic input, #form-add-comic select, #form-add-comic textarea').each(
+      function(index) {
+        var input = $(this);
+
+        input.parent().removeClass('has-success');
+        input.parent().removeClass('has-error');
+      }
+    );
+
+    $('#form-add-comic .error').text('');
+  },
+
   init: function() {
     FormComic.addGenresToSelect();
     FormComic.selectGenreChange();
     FormComic.addComic();
-    FormComic.formTitle();
     FormComic.imageUploadInput();
+    FormComic.validateComicExists();
+    FormComic.validateVideosUrl();
+    FormComic.formValidation();
   }
 };

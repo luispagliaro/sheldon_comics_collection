@@ -4,7 +4,7 @@ var Navigation = {
   addComicsToSearch: function() {
     var availableComics = [];
 
-    if (Controller.comics !== []) {
+    if (Controller.comics.length > 0) {
       $.each(Controller.comics, function(index, comic) {
         availableComics.push(comic.name);
       });
@@ -19,10 +19,12 @@ var Navigation = {
             $('.comic-item').show();
             $('.comic-item:not([id=' + comic.id + '])').hide(500);
           }
+
+          $('#input-search-comic').blur();
         },
 
         change: function(event, ui) {
-          if ($("#input-search-comic").val() === '') {
+          if ($('#input-search-comic').val() === '') {
             $('.comic-item').show(500);
           }
         }
@@ -31,7 +33,7 @@ var Navigation = {
   },
 
   addGenresToFilterDropdown: function() {
-    if (Controller.genres.length !== 0) {
+    if (Controller.genres.length > 0) {
       $('#dropdown-genre-menu').empty();
 
       $.each(Controller.genres, function(index, genre) {
@@ -89,12 +91,22 @@ var Navigation = {
     });
   },
 
+  preventEnter: function() {
+    $('#input-search-comic').keydown(function(event) {
+      if (event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  },
+
   init: function() {
     Navigation.addComicsToSearch();
     Navigation.addGenresToFilterDropdown();
     Navigation.addComicButtonClick();
     Navigation.loginButtonClick();
     Navigation.filterGenre();
+    Navigation.preventEnter();
     Navigation.logout();
   }
 };

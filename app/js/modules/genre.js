@@ -3,7 +3,7 @@
 var Controller = Controller || {};
 
 Controller.Genre = function(name) {
-  this.id = Controller.getGenresLength() + 1;
+  this.id = Controller.genres.length + 1;
   this.name = name;
 };
 
@@ -13,7 +13,7 @@ Controller.setGenre = function(genre) {
 };
 
 Controller.getGenres = function() {
-  if (localStorage.getItem('genres') === '') {
+  if (localStorage.getItem('genres') === '' || localStorage.getItem('genres') === null) {
     localStorage.setItem('genres', JSON.stringify([]));
   }
 
@@ -28,10 +28,9 @@ Controller.getGenre = function(idGenre) {
   return result[0];
 };
 
-Controller.getGenresLength = function() {
-  if (Controller.genres !== null) {
-    return Controller.genres.length;
-  } else {
-    return 0;
-  }
+Controller.getGenreByName = function(genreName) {
+  var result = $.grep(Controller.genres, function(e) {
+    return e.name == genreName;
+  });
+  return result[0];
 };
