@@ -4,7 +4,7 @@ This web application was developed for GlobantU courses. The app is a comic coll
 
 ### Functionalities
 
-To see the web, go to: www.matvey.com.ar/comics/index.html (to use the Facebook share is it necessary to go to this page since Facebook share doesn't work in local.
+To see the web live, go to: www.matvey.com.ar/comics/index.html (to use the Facebook share is it necessary to go to this page since Facebook share doesn't work in local).
 
 - Storage: for storing the data I used local storage. For the purposes of this course, it wasn't specified how to develop the backend functionality so I thought it would be better and faster to use local storage, and also it's a feature of HTML5 which is a requirements for passing the course.
 
