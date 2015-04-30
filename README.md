@@ -32,7 +32,7 @@ To see the web live, go to: www.matvey.com.ar/comics/index.html (to use the Face
 
 - Responsive design. For break points smaller than 768px wide the menu will change. A hamburguer icon will be displayed containing all the options of the navigation menu.
 
-- The images are stores as DataURL.
+- The images are stored as DataURL.
 
 ### Techonologies and libraries used
 
