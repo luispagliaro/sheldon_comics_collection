@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"va",
+				"validateImages"
+			],
+			[
+				"erro",
+				"errors"
+			],
+			[
+				"mod",
+				"modifying"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"err",
+				"errorMessage"
+			],
+			[
 				"has",
 				"hasError"
 			],
@@ -211,7 +231,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 9283,
+				"buffer_size": 9319,
 				"line_ending": "Unix"
 			}
 		},
@@ -219,7 +239,7 @@
 			"file": "app/js/modules/form-comic.js",
 			"settings":
 			{
-				"buffer_size": 8943,
+				"buffer_size": 17956,
 				"line_ending": "Unix"
 			}
 		},
@@ -227,7 +247,7 @@
 			"file": "app/js/modules/main-content.js",
 			"settings":
 			{
-				"buffer_size": 7032,
+				"buffer_size": 7980,
 				"line_ending": "Unix",
 				"name": "var MainContent = function ()"
 			}
@@ -236,23 +256,7 @@
 			"file": "app/js/modules/navigation.js",
 			"settings":
 			{
-				"buffer_size": 3033,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/js/modules/comic.js",
-			"settings":
-			{
-				"buffer_size": 1289,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/js/modules/genre.js",
-			"settings":
-			{
-				"buffer_size": 904,
+				"buffer_size": 3762,
 				"line_ending": "Unix"
 			}
 		},
@@ -260,7 +264,23 @@
 			"file": "app/js/modules/login-out.js",
 			"settings":
 			{
-				"buffer_size": 1789,
+				"buffer_size": 2314,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/modules/comic.js",
+			"settings":
+			{
+				"buffer_size": 2053,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/modules/genre.js",
+			"settings":
+			{
+				"buffer_size": 1361,
 				"line_ending": "Unix"
 			}
 		},
@@ -292,7 +312,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 2483,
+				"buffer_size": 3664,
 				"line_ending": "Unix"
 			}
 		}
@@ -341,6 +361,7 @@
 	},
 	"file_history":
 	[
+		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/DocBlockr/README.md",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/modules/logout.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/JSHint Gutter/JSHint.sublime-settings",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/.config/sublime-text-2/Packages/JSHint Gutter/.jshintrc",
@@ -467,8 +488,7 @@
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/ndgharwood/svgjsconfig.xml",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/ndgharwood/images/logo.svg",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/cfg/subpa/chinews/mrtgrove/svgjsconfig.xml",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/mrtgrove/images/logo.svg",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/lcnwood/images/logo.svg"
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/appassets/subpa/chinews/mrtgrove/images/logo.svg"
 	],
 	"find":
 	{
@@ -525,6 +545,16 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"imageUploadInput",
+			"formTitle",
+			"setGenre",
+			"setFormAddComic",
+			"alert",
+			"addGenresToSelect",
+			"showInputGenre",
+			"]);\n",
+			"validateGenreExists",
+			"validateComicExists",
 			"checkValidity()",
 			"MainContent.getComic",
 			"loadComicData",
@@ -642,17 +672,7 @@
 			"trb_masthead_header_subtitle_wrapper",
 			"staff",
 			"trb_masthead_header_subtitle_wrapper",
-			"data-content-type",
-			"data-content-type='staff'",
-			"data-content-type~='staff'",
-			"data-content-type",
-			"trb_masthead_title_wrapper",
-			".trb_masthead_header_subtitle_wrapper:after",
-			"trb_gallerylandingMasthead_title_wrapper_width_420bp",
-			"trb_gallerylandingMasthead",
-			".trb_mastheadsmall .trb_gallerylandingMasthead",
-			"galleryLogo",
-			"data-content-svgtype=\"galleryLogo\""
+			"data-content-type"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -689,15 +709,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 9283,
+						"buffer_size": 9319,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5161,
-								5161
+								2038,
+								2038
 							]
 						],
 						"settings":
@@ -756,7 +776,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1988.0,
+						"translation.y": 1678.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -766,15 +786,15 @@
 					"file": "app/js/modules/form-comic.js",
 					"settings":
 					{
-						"buffer_size": 8943,
+						"buffer_size": 17956,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8181,
-								8181
+								13345,
+								13345
 							]
 						],
 						"settings":
@@ -833,7 +853,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5029.0,
+						"translation.y": 7901.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -843,15 +863,15 @@
 					"file": "app/js/modules/main-content.js",
 					"settings":
 					{
-						"buffer_size": 7032,
+						"buffer_size": 7980,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3498,
-								3498
+								585,
+								585
 							]
 						],
 						"settings":
@@ -912,7 +932,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 524.0,
+						"translation.y": 404.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -922,15 +942,15 @@
 					"file": "app/js/modules/navigation.js",
 					"settings":
 					{
-						"buffer_size": 3033,
+						"buffer_size": 3762,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								657,
-								657
+								2312,
+								2312
 							]
 						],
 						"settings":
@@ -989,25 +1009,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1189.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/js/modules/comic.js",
+					"file": "app/js/modules/login-out.js",
 					"settings":
 					{
-						"buffer_size": 1289,
+						"buffer_size": 2314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1249,
-								1249
+								2094,
+								2094
 							]
 						],
 						"settings":
@@ -1066,25 +1086,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 323.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/js/modules/genre.js",
+					"file": "app/js/modules/comic.js",
 					"settings":
 					{
-						"buffer_size": 904,
+						"buffer_size": 2053,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								864,
-								864
+								1556,
+								1556
 							]
 						],
 						"settings":
@@ -1143,25 +1163,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 399.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "app/js/modules/login-out.js",
+					"file": "app/js/modules/genre.js",
 					"settings":
 					{
-						"buffer_size": 1789,
+						"buffer_size": 1361,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								303,
-								303
+								1063,
+								1063
 							]
 						],
 						"settings":
@@ -1220,7 +1240,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 684.0,
+						"translation.y": 177.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1237,8 +1257,8 @@
 						"selection":
 						[
 							[
-								180,
-								180
+								14,
+								14
 							]
 						],
 						"settings":
@@ -1458,15 +1478,15 @@
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 2483,
+						"buffer_size": 3664,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								481,
-								481
+								369,
+								369
 							]
 						],
 						"settings":
