@@ -1,0 +1,121 @@
+h1 {
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .collapse.navbar-collapse {
+    padding-left: 0px;
+  }
+  .navbar-collapse {
+    padding-left: 0px;
+  }
+  .navbar-form.navbar-left {
+    padding-left: 0px;
+  }
+}
+
+#add-comic-text {
+  display: none;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+#input-search-comic {
+  width: 250px;
+}
+
+.thumbnail {
+  margin-top: 15px;
+}
+
+.panel-footer {
+  background-color: #337ab7;
+  color: white;
+}
+
+.caption {
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.navbar-btn {
+  margin-left: 15px;
+}
+
+.thumbnail img {
+  height: 200px;
+}
+
+.btn-sm {
+  margin-right: 6px;
+}
+
+.ui-autocomplete {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.btn-social.btn-xs {
+  padding-left: 23px;
+  padding-right: 3px;
+  margin-right: 6px;
+}
+
+.modal-fb {
+  width: 630px;
+}
+
+#dialog-add-comic .modal-dialog,
+#dialog-add-comic .modal-content,
+#dialog-login .modal-dialog,
+#dialog-login .modal-content {
+  width: 320px;
+}
+
+#blueimp-gallery .modal-header {
+  border-bottom: unset;
+}
+
+#blueimp-gallery .modal-footer {
+  border-top: unset;
+}
+
+#button-add-comic {
+  display: none;
+}
+
+#checkbox-change-image,
+label[for=checkbox-change-image],
+#input-id,
+label[for=input-id],
+{
+  display: none;
+}
+
+.alert {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 14px auto;
+  width: 25%;
+  display: none;
+}
+
+.glyphicon-remove-circle,
+.glyphicon-edit {
+  top: 3px;
+  padding-left: 5px;
+  display: none;
+}
+
+#button-logout {
+  display: none;
+}

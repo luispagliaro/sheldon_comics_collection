@@ -4,14 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sheldon Comics Collection</title>
-  <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+  <title>Sheldon's Comics Collection</title>
   <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/jquery-ui-cupertino/jquery-ui.css">
+  <link rel="stylesheet" href="js/gallery/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" href="js/gallery/css/bootstrap-image-gallery.min.css">
+  <link rel="stylesheet" href="css/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <div id="fb-root"></div>
   <div class="container">
-    <main class="panel panel-primary">
+    <div id="alert-ok" class="alert alert-success text-center" role="alert"></div>
+    <div id="alert-fail" class="alert alert-danger text-center" role="alert"></div>
+    <div class="panel panel-primary">
       <header class="panel-heading">
         <h1 class="text-center">Sheldon's Comics Collection</h1>
       </header>
@@ -28,37 +36,153 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form class="navbar-form navbar-left">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search for comics">
+                <input id="input-search-comic" type="text" class="form-control ui-widget" placeholder="Search comic">
               </div>
             </form>
-            <ul class="nav navbar-nav">
+            <ul id="ul-filter-genre" class="nav navbar-nav">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter by genre <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Genre 1</a></li>
-                  <li><a href="#">Genre 2</a></li>
-                  <li><a href="#">Genre 3</a></li>
+                <a href="#" id="dropdown-filter-genre"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter by genre <span class="caret"></span></a>
+                <ul id="dropdown-genre-menu" class="dropdown-menu" role="menu">
+                  <li><a href="#">Show all <span class="genre-filter-selection glyphicon glyphicon-ok"></span></a></li>
                 </ul>
               </li>
             </ul>
             <div class="nav navbar-nav navbar-right">
-              <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+              <button id="button-login" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-login">Log in</button>
+              <button id="button-add-comic" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-add-comic">Add comic</button>
+              <button id="button-logout" type="button" class="btn btn-default navbar-btn">Log out</button>
             </div>
           </div>
         </div>
       </nav>
-      <div class="panel-body">
-        <div class="row" id="comiscCollection">
+      <main id="main-content" class="panel-body">
+        <div class="row" id="comics-collection">
+          <h4 id="add-comic-text" class="text-center">Click 'Add comic' to start adding comics to the collection.</h4>
+        </div>
+      </main>
+      <footer class="panel-footer panel-primary text-center">Sheldon's Comics Collection. Developed by Luis Pagliaro.</footer>
+    </div>
+  </div>
+  <div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <div class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body next"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary pull-left prev">
+              <i class="glyphicon glyphicon-chevron-left"></i> Previous
+            </button>
+            <button type="button" class="btn btn-primary next"> Next
+              <i class="glyphicon glyphicon-chevron-right"></i>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="panel-footer panel-primary text-center">Sheldon's Comics Collection. Designed by Luis Pagliaro.</div>
-    </main>
+    </div>
   </div>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-ui/jquery-ui.min.js"></script>
+  <div class="modal fade" id="dialog-add-comic" tabindex="-1" role="dialog" aria-labelledby="add-comic-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="add-comic-label">Add comic</h4>
+        </div>
+        <div class="modal-body">
+          <form id="form-add-comic" role="form">
+            <div class="form-group">
+              <input type="hidden" class="form-control" id="input-id" disabled>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="input-name">Name:</label>
+              <input type="text" class="form-control" id="input-name" placeholder="Enter name" required>
+              <span class="control-label pull-right error"></span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="select-genre">Genre:</label>
+              <select id="select-genre" class="form-control" required>
+                <option value="" disabled selected>Select genre</option>
+              </select>
+              <input type="text" class="form-control" id="input-genre" placeholder="Enter genre" maxlength="20" required disabled>
+              <span class="control-label pull-right error"></span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="text-description">Description:</label>
+              <textarea type="text" class="form-control" id="text-description" placeholder="Enter description" required></textarea>
+              <span class="control-label pull-right error"></span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="input-quantity">Quantity:</label>
+              <input type="number" min="1" max="1000" class="form-control" id="input-quantity" placeholder="Enter quantity" required>
+              <span class="control-label pull-right error"></span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="text-videos">Videos URLs:</label>
+              <textarea class="form-control" id="text-videos" placeholder="Enter YouTube video url (one per line)" required></textarea>
+              <span class="control-label pull-right error"></span>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="input-images">Images:</label>
+              <input type="file" id="input-images" class="filestyle" data-buttonBefore="true" accept="image/*" multiple required>
+              <span class="control-label pull-right error"></span>
+            </div>
+            <div class="form-group">
+              <input id="checkbox-change-image" type="checkbox">
+              <label for="checkbox-change-image">Change images</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="dialog-login" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="login-label">Log in</h4>
+        </div>
+        <div class="modal-body">
+          <form id="form-login" role="form">
+            <div class="form-group">
+              <label class="control-label" for="input-user">Username:</label>
+              <input type="text" class="form-control" id="input-user" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="input-pass">Password:</label>
+              <input type="password" class="form-control" id="input-pass" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery/jquery.min.js"></script>
   <script src="js/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/controller.js"></script>
+  <script src="js/jquery-ui-cupertino/jquery-ui.js"></script>
+  <script src="js/gallery/js/jquery.blueimp-gallery.min.js"></script>
+  <script src="js/gallery/js/bootstrap-image-gallery.min.js"></script>
+  <script src="js/bootstrap/js/bootstrap-filestyle.min.js"></script>
+  <script src="js/modules/login-out.js"></script>
+  <script src="js/modules/main-content.js"></script>
+  <script src="js/modules/navigation.js"></script>
+  <script src="js/modules/form-comic.js"></script>
+  <script src="js/modules/comic.js"></script>
+  <script src="js/modules/genre.js"></script>
+  <script src="js/modules/app.js"></script>
+  <script src="js/facebook/fb-api.js"></script>
+  <script src="js/md5/md5.js"></script>
 </body>
 
 </html>
