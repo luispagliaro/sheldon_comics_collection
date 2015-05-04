@@ -537,7 +537,7 @@ var FormComic = {
       var parent = $(el).parent();
 
       // Checks the state of the validation.
-      if (status === 'success') {
+      if (status === 'error') {
         // Remove any previously set state.
         parent.removeClass('has-success').addClass('has-error');
 
@@ -546,6 +546,7 @@ var FormComic = {
           $(el).next().next().text($(el)[0].validationMessage);
         } else {
           $(el).next().text($(el)[0].validationMessage);
+          console.log($(el)[0].validationMessage);
         }
       } else {
         // Remove any previously set state.
@@ -583,9 +584,9 @@ var FormComic = {
       input.on(e, function() {
         // Check the validity of the element and calls the addStatusClass function to set the state of the element.
         if (input[0].checkValidity() === false) {
-          addStatusClass('#' + input.attr('id'), 'success');
-        } else {
           addStatusClass('#' + input.attr('id'), 'error');
+        } else {
+          addStatusClass('#' + input.attr('id'), 'success');
         }
       });
     });

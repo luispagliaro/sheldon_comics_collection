@@ -81,11 +81,11 @@ p {
 }
 
 #blueimp-gallery .modal-header {
-  border-bottom: unset;
+  border-bottom: none;
 }
 
 #blueimp-gallery .modal-footer {
-  border-top: unset;
+  border-top: none;
 }
 
 #button-add-comic {
@@ -95,7 +95,7 @@ p {
 #checkbox-change-image,
 label[for=checkbox-change-image],
 #input-id,
-label[for=input-id],
+label[for=input-id]
 {
   display: none;
 }
