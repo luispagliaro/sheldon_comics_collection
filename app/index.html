@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Other">
 
 <head>
   <meta charset="utf-8">
@@ -41,7 +41,7 @@
             </form>
             <ul id="ul-filter-genre" class="nav navbar-nav">
               <li class="dropdown">
-                <a href="#" id="dropdown-filter-genre"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter by genre <span class="caret"></span></a>
+                <a href="#" id="dropdown-filter-genre" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter by genre <span class="caret"></span></a>
                 <ul id="dropdown-genre-menu" class="dropdown-menu" role="menu">
                   <li><a href="#">Show all <span class="genre-filter-selection glyphicon glyphicon-ok"></span></a></li>
                 </ul>
@@ -50,6 +50,18 @@
             <div class="nav navbar-nav navbar-right">
               <button id="button-login" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-login">Log in</button>
               <button id="button-add-comic" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-add-comic">Add comic</button>
+              <div class="btn-default navbar-btn btn-group">
+                <button type="button" class="btn btn-default">Social log in</button>
+                <button aria-expanded="false" data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li id="tw-log"><a href="#"><i class="fa fa-twitter"></i> Log in to Twitter</a></li>
+                  <li id="go-log"><a href="#"><i class="fa fa-google"></i> Log in to Google+</a></li>
+                  <li id="fb-log"><a href="#"><i class="fa fa-facebook"></i> Log in to Facebook</a></li>
+                </ul>
+              </div>
               <button id="button-logout" type="button" class="btn btn-default navbar-btn">Log out</button>
             </div>
           </div>
@@ -174,6 +186,11 @@
   <script src="js/gallery/js/jquery.blueimp-gallery.min.js"></script>
   <script src="js/gallery/js/bootstrap-image-gallery.min.js"></script>
   <script src="js/bootstrap/js/bootstrap-filestyle.min.js"></script>
+  <script src="js/facebook/fb-api.js"></script>
+  <script src="js/google+/plusone.js"></script>
+  <script src="js/twitter/widgets.js"></script>
+  <script src="js/hello/hello.js"></script>
+  <script src="js/hello/init.js"></script>
   <script src="js/modules/login-out.js"></script>
   <script src="js/modules/main-content.js"></script>
   <script src="js/modules/navigation.js"></script>
@@ -181,7 +198,6 @@
   <script src="js/modules/comic.js"></script>
   <script src="js/modules/genre.js"></script>
   <script src="js/modules/app.js"></script>
-  <script src="js/facebook/fb-api.js"></script>
   <script src="js/md5/md5.js"></script>
 </body>
 

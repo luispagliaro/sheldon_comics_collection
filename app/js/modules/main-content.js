@@ -42,22 +42,28 @@ var MainContent = {
 
         // Creates the div element for the comic.
         comicItem += '<div id="' + comic.id + '" class="comic-item col-xs-6 col-sm-4 col-md-3">';
-        comicItem += '<h4>' + title + '</h4>';
+        comicItem += '<h4 itemprop="name">' + title + '</h4>';
         comicItem += '<span class="label label-success" title="Genre">' + Controller.getGenre(comic.idGenre).name + '</span> ';
         comicItem += '<span class="badge" title="Quantity">' + comic.quantity + itemLabel + '</span>';
         comicItem += '<span class="glyphicon glyphicon-remove-circle pull-right" title="Remove comic" aria-hidden="true"></span>';
         comicItem += '<span class="glyphicon glyphicon-edit pull-right" title="Modify comic" aria-hidden="true" data-toggle="modal" data-target="#dialog-add-comic"></span>';
         comicItem += '<div class="thumbnail">';
-        comicItem += '<img src="' + comic.images[0] + '" class="img-responsive" alt="' + comic.description + '"/>';
-        comicItem += '<p class="caption">' + comic.description + '</p>';
+        comicItem += '<img itemprop="image" src="' + comic.images[0] + '" class="img-responsive" alt="' + comic.description + '"/>';
+        comicItem += '<p itemprop="description" class="caption">' + comic.description + '</p>';
         comicItem += '<button class="btn btn-default btn-sm image-gallery-button" title="Image gallery" type="button" id="igallery-' + comic.id + '">';
         comicItem += '<i class="glyphicon glyphicon-picture"></i>';
         comicItem += '</button>';
         comicItem += '<button id="vgallery-' + comic.id + '" title="Video gallery" type="button" class="btn btn-default btn-sm video-gallery-button">';
         comicItem += '<i class="glyphicon glyphicon-film"></i>';
         comicItem += '</button>';
-        comicItem += '<a id="share-' + comic.id + '" class="btn btn-social btn-xs btn-vk btn-share">';
-        comicItem += '<i class="fa fa-facebook"></i>Share';
+        comicItem += '<a id="sharefb-' + comic.id + '" class="btn btn-sm btn-social-icon btn-facebook btn-share pull-right" title="Share on Facebook">';
+        comicItem += '<i class="fa fa-facebook"></i>';
+        comicItem += '</a>';
+        comicItem += '<a id="shareg-' + comic.id + '" class="btn btn-sm btn-social-icon btn-google btn-share pull-right" title="Share on Google+">';
+        comicItem += '<i class="fa fa-google"></i>';
+        comicItem += '</a>';
+        comicItem += '<a id="sharetw-' + comic.id + '" class="btn btn-sm btn-social-icon btn-twitter btn-share pull-right">';
+        comicItem += '<i class="fa fa-twitter"></i>';
         comicItem += '</a>';
         comicItem += '</div>';
         comicItem += '</div>';
@@ -83,8 +89,14 @@ var MainContent = {
       // Calls the 'imageVideoGallery' function to create the image and video gallery for each comic.
       MainContent.imageVideoGallery();
 
-      // Calls the 'shareOnFB' function to create the Facebook sharer for each comic.
+      // Calls the 'shareOnFB' function to create the Facebook sharer.
       MainContent.shareOnFB();
+
+      // Calls the 'shareOnGoogle' function to create the Google+ sharer.
+      MainContent.shareOnGoogle();
+
+      // Calls the 'shareOnTwitter' function to create the Twitter sharer.
+      MainContent.shareOnTwitter();
 
       // Calls the 'addComicsToSearch' to fill the autocomplete for the search input.
       Navigation.addComicsToSearch();
@@ -166,7 +178,7 @@ var MainContent = {
     /**
      * Binds the on click event to the Facebook buttons.
      */
-    $('.btn-share').on('click', function(e) {
+    $('.btn-facebook').on('click', function(e) {
       // Prevents default actions.
       e.preventDefault();
 
@@ -177,7 +189,7 @@ var MainContent = {
       FB.ui({
         method: 'feed',
         name: comic.name,
-        link: 'http://www.matvey.com.ar/comics/index.html#share-' + comic.id,
+        link: 'http://www.matvey.com.ar/comics/index.html#sharefb-' + comic.id,
         picture: '',
         caption: Controller.getGenre(comic.idGenre).name,
         description: comic.description,
@@ -187,11 +199,55 @@ var MainContent = {
   },
 
   /**
+   * Creates the Google+ sharer.
+   */
+  shareOnGoogle: function() {
+    $('.btn-google').each(function() {
+      /** @type {Object} A comic. */
+      var comic = MainContent.getComic($(this));
+
+      /** @type {Object} Options for Google+ sharer. */
+      var options = {
+        contenturl: 'http://http://www.matvey.com.ar/comics2/index.html/' + comic.id,
+        clientid: '299681151289-38fqfoa8k1idvon13rjj71u7fgc0qqvb.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        prefilltext: 'Check this comic I\'ve found on Sheldon\'s Comics Collection! - Comic: ' + comic.name + ' - Description: ' + comic.description,
+        calltoactionlabel: 'VISIT',
+        calltoactionurl: 'http://www.matvey.com.ar/comics2/index.html'
+      };
+
+      gapi.interactivepost.render('shareg-' + comic.id, options);
+    });
+  },
+
+  /**
+   * Creates the Twitter sharer.
+   */
+  shareOnTwitter: function() {
+    $('.btn-twitter').on('click', function() {
+      /** @type {Object} A comic. */
+      var comic = MainContent.getComic($(this));
+
+      /** @type {String} Text to tweet. */
+      var text = 'Check this comic I\'ve found on Sheldon\'s Comics Collection! - Comic: ' + comic.name;
+
+      /** @type {Number} Left position to center pop up horizontally. */
+      var leftPosition = (screen.width) ? (screen.width - 600) / 2 : 0;
+
+      /** @type {Number} Top position to center pop up vertically. */
+      var topPosition = (screen.height) ? (screen.height - 253) / 2 : 0;
+
+      // Launches the pop up for twitting.
+      window.open('https://twitter.com/intent/tweet?text=' + text, '_blank', 'toolbar=no, scrollbars=no, resizable=no, width=600, height=253, left=' + leftPosition + ', top=' + topPosition);
+    });
+  },
+
+  /**
    * Sets the settings for when the user is loged in or not.
-   * @param  {String} status Status logedin or not logedin
+   * @param  {String} status Status logedin or not logedin.
    */
   userLogedIn: function(status) {
-    // Checks the status of the user
+    // Checks the status of the user.
     if (status === 'logedin') {
       // Shows a text to the user to add comics.
       $('#add-comic-text').show();

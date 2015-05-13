@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function() {
-	// Loads the comics and genre data.
+  // Loads the comics and genre data.
   Controller.getGenres();
   Controller.getComics();
 

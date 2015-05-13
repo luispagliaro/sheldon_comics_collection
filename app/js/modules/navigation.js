@@ -104,6 +104,11 @@ var Navigation = {
    */
   filterGenre: function() {
     /**
+     * Unbinds any previous click event.
+     */
+    $('#dropdown-genre-menu li').unbind('click');
+
+    /**
      * Binds the on click event to the 'li' element of the genre dropdown.
      */
     $('#dropdown-genre-menu li').click(function() {
@@ -121,7 +126,7 @@ var Navigation = {
         $('#comics-collection .comic-item').show(500);
       } else {
         $('#comics-collection .comic-item').show(500);
-        $('#comics-collection .comic-item:not(:contains(' + $(this).text() + '))').hide(500);
+        $('#comics-collection .comic-item:not(:contains(' + el.text() + '))').hide(500);
       }
     });
   },

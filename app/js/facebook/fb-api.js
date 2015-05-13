@@ -5,6 +5,32 @@ window.fbAsyncInit = function() {
     cookie: true,
     xfbml: true
   });
+
+  /*FB.login(function() {
+    FB.api('/me/accounts', 'get', {}, function(response) {
+      console.log(response);
+    });
+  }, {
+    scope: 'publish_actions'
+  });
+
+  FB.api('/me/feed', 'post', {
+    message: 'hkhjk'
+  }, function(response) {
+    console.log(response);
+  });
+
+FB.Event.subscribe('auth.authResponseChange', function (response) {
+  if (response.status === 'connected') {
+    alert("Successfully connected to Facebook!");
+  }
+  else if (response.status === 'not_authorized') {
+    alert("Login failed!");
+  } else {
+    alert("Unknown error!");
+  }
+});
+*/
 };
 (function() {
   var e = document.createElement('script');
