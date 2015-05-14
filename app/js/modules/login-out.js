@@ -110,6 +110,34 @@ var LogInOut = {
   },
 
   /**
+   * Checks if the user has sign in to a social network.
+   * @param  {String} network Current social network.
+   * @param  {Object} el      li 'social-login' element clicked.
+   * @return {[type]}         Social network status.
+   */
+  checkSignIn: function(network, el) {
+    /** @type {String} ID of the li 'social-login' element clicked. */
+    var id = el.id;
+
+    /**
+     * Checks if the social network session is loged in or expired.
+     * @param  {Object} session   The current social network session.
+     * @return {Boolean or Null}  Status of the current session.
+     */
+    function online (session) {
+      /** @type {Date} Current time. */
+      var currentTime = (new Date()).getTime() / 1000;
+
+      return session && session.access_token && session.expires > currentTime;
+    }
+
+    /** @type {Object} The current network session. */
+    var on = hello(network).getAuthResponse();
+
+    return online(on) ? true : false;
+  },
+
+  /**
    * Initialization of the LogInOut module function.
    */
   init: function() {

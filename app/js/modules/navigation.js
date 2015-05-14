@@ -158,6 +158,73 @@ var Navigation = {
   },
 
   /**
+   * Checks for every social network if the user is loged in.
+   */
+  socialButtonsState: function() {
+    $('.social-login').each(function(index, el) {
+      /** @type {String} Name of the network clicked. */
+      var network = Navigation.getSocialNetwork(el);
+
+      /** @type {Boolean} Status of the current social network session. */
+      var status = LogInOut.checkSignIn(network, el);
+
+      // Checks the status of the session and sets the correct action for the li 'social-login' element.
+      if (status) {
+        $('#' + el.id + ' i').text(' Log out from ' + (network.charAt(0).toUpperCase() + network.substring(1)));
+      } else {
+        $('#' + el.id + ' i').text(' Log in to ' + (network.charAt(0).toUpperCase() + network.substring(1)));
+      }
+    });
+  },
+
+  /**
+   * Gets the name of the social network to be used.
+   * @param  {Object} el li 'social-login' element clicked.
+   * @return {String}    Name of the social network.
+   */
+  getSocialNetwork: function(el) {
+    // Sets the network name according to what li element was clicked.
+    switch (el.id) {
+      case 'tw-log':
+        return 'twitter';
+      case 'go-log':
+        return 'google';
+      case 'fb-log':
+        return 'facebook';
+    }
+  },
+
+  /**
+   * Opens the log in pop up for the selected social network.
+   */
+  socialLoginClick: function() {
+    /**
+     * Binds the on click event to the li 'social-login' element.
+     */
+    $('.social-login').click(function() {
+      /** @type {String} Name of the network clicked. */
+      var network = Navigation.getSocialNetwork($(this)[0]);
+
+      // Checks if the user is loged in to the current network.
+      if (LogInOut.checkSignIn(network, $(this)[0])) {
+        hello.logout(network).then(function() {
+          Navigation.socialButtonsState();
+        });
+      } else {
+        /** @type {Object} Setting for the login popup. */
+        var options = {
+          scope: 'publish'
+        };
+
+        // Opens the log in pop up for the selected social network.
+        hello.login(network, options).then(function() {
+          Navigation.socialButtonsState();
+        });
+      }
+    })
+  },
+
+  /**
    * Sets the setting for when the user is loged in and for when it is not loged in.
    * @param  {String} status Status logedin or not logedin.
    */
@@ -168,19 +235,25 @@ var Navigation = {
       $('#button-login').hide();
 
       // Shows the button 'button-add-comic' element.
-      $('#button-add-comic').show();
+      $('#button-add-comic').css('display', 'inline-block');
 
       // Shows the button 'button-logout' element.
-      $('#button-logout').show();
+      $('#button-logout').css('display', 'inline-block');
+
+      // Shows the button 'button-social-login' element.
+      $('#button-social-login').css('display', 'inline-block');
     } else {
       // Shows the button 'button-login' element.
-      $('#button-login').show();
+      $('#button-login').css('display', 'inline-block');
 
       // Hides the button 'button-add-comic' element.
       $('#button-add-comic').hide();
 
       // Hides the button 'button-logout' element.
       $('#button-logout').hide();
+
+      // Shows the button 'button-social-login' element.
+      $('#button-social-login').hide();
     }
   },
 
@@ -205,6 +278,8 @@ var Navigation = {
     Navigation.addGenresToFilterDropdown();
     Navigation.addComicButtonClick();
     Navigation.loginButtonClick();
+    Navigation.socialButtonsState();
+    Navigation.socialLoginClick();
     Navigation.filterGenre();
     Navigation.preventEnter();
     Navigation.logout();

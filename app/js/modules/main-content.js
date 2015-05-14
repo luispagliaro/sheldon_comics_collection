@@ -50,21 +50,27 @@ var MainContent = {
         comicItem += '<div class="thumbnail">';
         comicItem += '<img itemprop="image" src="' + comic.images[0] + '" class="img-responsive" alt="' + comic.description + '"/>';
         comicItem += '<p itemprop="description" class="caption">' + comic.description + '</p>';
+        comicItem += '<div class="row">';
+        comicItem += '<div class="col-xs-6">';
         comicItem += '<button class="btn btn-default btn-sm image-gallery-button" title="Image gallery" type="button" id="igallery-' + comic.id + '">';
         comicItem += '<i class="glyphicon glyphicon-picture"></i>';
         comicItem += '</button>';
         comicItem += '<button id="vgallery-' + comic.id + '" title="Video gallery" type="button" class="btn btn-default btn-sm video-gallery-button">';
         comicItem += '<i class="glyphicon glyphicon-film"></i>';
         comicItem += '</button>';
+        comicItem += '</div>';
+        comicItem += '<div class="col-xs-6">';
         comicItem += '<a id="sharefb-' + comic.id + '" class="btn btn-sm btn-social-icon btn-facebook btn-share pull-right" title="Share on Facebook">';
         comicItem += '<i class="fa fa-facebook"></i>';
         comicItem += '</a>';
         comicItem += '<a id="shareg-' + comic.id + '" class="btn btn-sm btn-social-icon btn-google btn-share pull-right" title="Share on Google+">';
         comicItem += '<i class="fa fa-google"></i>';
         comicItem += '</a>';
-        comicItem += '<a id="sharetw-' + comic.id + '" class="btn btn-sm btn-social-icon btn-twitter btn-share pull-right">';
+        comicItem += '<a id="sharetw-' + comic.id + '" class="btn btn-sm btn-social-icon btn-twitter btn-share pull-right" title="Share on Twitter">';
         comicItem += '<i class="fa fa-twitter"></i>';
         comicItem += '</a>';
+        comicItem += '</div>';
+        comicItem += '</div>';
         comicItem += '</div>';
         comicItem += '</div>';
 
@@ -75,12 +81,6 @@ var MainContent = {
         if (comic.name.length > 20) {
           $('.comic-item[id=' + comic.id + '] h4').attr('title', comic.name);
         }
-
-        /*fb comments 
-
-        <a id=\'comments-' + comic.id + '\' class=\'btn btn-social btn-xs btn-vk btn-comments\' data-toggle=\'modal\' data-target=\'#fb-comments-modal-' + comic.id + '\'><i class=\'fa fa-facebook\'></i>Comments</a>
-
-        $('body').append('<div class="modal fade modal-fb" id="fb-comments-modal-' + comic.id + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><div id="fb-comments-' + comic.id + '" href-data="http://www.matvey.com.ar/comics/index.html/?comments-' + comic.id + '" class="fb-comments" data-width="600" data-numposts="5" data-colorscheme="light"></div></div></div></div></div>');*/
       });
 
       // Adds the jQuery UI tooltip.
@@ -216,6 +216,7 @@ var MainContent = {
         calltoactionurl: 'http://www.matvey.com.ar/comics2/index.html'
       };
 
+      // Creates the Google+ sharer object.
       gapi.interactivepost.render('shareg-' + comic.id, options);
     });
   },
@@ -343,17 +344,6 @@ var MainContent = {
     });
   },
 
-  /*fbComments: function() {
-    $('.btn-comments').on('click', function(e) {
-      e.preventDefault();
-
-      var id = $(this).attr('id');
-      id = id.substr((id.length - 1), 1);
-
-      $('#fb-comments-modal-' + id + '').remove();
-    });
-  },*/
-
   /**
    * Gets a comic from an element ID.
    * @param  {Object} el Element from which to take the ID
@@ -395,6 +385,5 @@ var MainContent = {
    */
   init: function() {
     MainContent.loadComics();
-    //MainContent.fbComments();
   }
 };

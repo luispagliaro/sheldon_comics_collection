@@ -34,9 +34,6 @@ var FormComic = {
     // Hides the select 'select-genre' element 
     select.hide();
 
-    // Adds the input 'input-genre' element after the select 'select-genre' element.
-    //select.after('<input type="text" class="form-control" id="input-genre" placeholder="Enter genre" maxlength="20" required>');
-
     /** @type {Object} Input 'input-genre' element */
     var input = $('#input-genre');
 
@@ -546,7 +543,6 @@ var FormComic = {
           $(el).next().next().text($(el)[0].validationMessage);
         } else {
           $(el).next().text($(el)[0].validationMessage);
-          console.log($(el)[0].validationMessage);
         }
       } else {
         // Remove any previously set state.
