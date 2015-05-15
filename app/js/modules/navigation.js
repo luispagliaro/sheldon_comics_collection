@@ -166,7 +166,7 @@ var Navigation = {
       var network = Navigation.getSocialNetwork(el);
 
       /** @type {Boolean} Status of the current social network session. */
-      var status = LogInOut.checkSignIn(network, el);
+      var status = LogInOut.checkSignIn(network);
 
       // Checks the status of the session and sets the correct action for the li 'social-login' element.
       if (status) {
@@ -206,7 +206,7 @@ var Navigation = {
       var network = Navigation.getSocialNetwork($(this)[0]);
 
       // Checks if the user is loged in to the current network.
-      if (LogInOut.checkSignIn(network, $(this)[0])) {
+      if (LogInOut.checkSignIn(network)) {
         hello.logout(network).then(function() {
           Navigation.socialButtonsState();
         });

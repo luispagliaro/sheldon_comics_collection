@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"new",
+				"network"
+			],
+			[
+				"ch",
+				"checkSignIn"
+			],
+			[
+				"NA",
+				"Navigation"
+			],
+			[
+				"soc",
+				"socialLoginClick"
+			],
+			[
 				"ne",
 				"network"
 			],
@@ -156,10 +176,6 @@
 				"images"
 			],
 			[
-				"margin",
-				"margin-right"
-			],
-			[
 				"margi",
 				"margin-left"
 			],
@@ -263,7 +279,15 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 10555,
+				"buffer_size": 10580,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/modules/form-comic.js",
+			"settings":
+			{
+				"buffer_size": 20411,
 				"line_ending": "Unix"
 			}
 		},
@@ -271,16 +295,7 @@
 			"file": "app/js/modules/main-content.js",
 			"settings":
 			{
-				"buffer_size": 14459,
-				"line_ending": "Unix",
-				"name": "var MainContent = function ()"
-			}
-		},
-		{
-			"file": "app/js/modules/form-comic.js",
-			"settings":
-			{
-				"buffer_size": 20628,
+				"buffer_size": 13699,
 				"line_ending": "Unix"
 			}
 		},
@@ -288,7 +303,7 @@
 			"file": "app/js/modules/navigation.js",
 			"settings":
 			{
-				"buffer_size": 7129,
+				"buffer_size": 8627,
 				"line_ending": "Unix"
 			}
 		},
@@ -296,7 +311,7 @@
 			"file": "app/js/modules/login-out.js",
 			"settings":
 			{
-				"buffer_size": 3494,
+				"buffer_size": 4446,
 				"line_ending": "Unix"
 			}
 		},
@@ -328,7 +343,7 @@
 			"file": "app/css/style.css",
 			"settings":
 			{
-				"buffer_size": 1517,
+				"buffer_size": 1498,
 				"line_ending": "Unix"
 			}
 		},
@@ -336,7 +351,7 @@
 			"file": "app/js/facebook/fb-api.js",
 			"settings":
 			{
-				"buffer_size": 1244,
+				"buffer_size": 350,
 				"line_ending": "Unix"
 			}
 		},
@@ -393,6 +408,7 @@
 	},
 	"file_history":
 	[
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/modules/main-content.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/google+/google+.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/google+/prueba.html",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/hello/hello.js",
@@ -519,8 +535,7 @@
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbine-tomcat-dev-install/setup.sh",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/turbine.cfg/httpd-vhosts.conf",
 		"/etc/apache2/extra",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat7/bin/catalina.sh",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/jive/jive-web/src/main/assets/allnews/javascripts/newsletters/gallery.js"
+		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat7/bin/catalina.sh"
 	],
 	"find":
 	{
@@ -577,6 +592,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"button",
+			"console",
+			");",
+			"console",
 			"<<",
 			"<",
 			"<<",
@@ -700,11 +719,7 @@
 			"trb_masthead_right_container_display_700bp",
 			"trb_masthead_right_container",
 			".trb_masthead_right_container",
-			"trb_navhead asdasd",
-			"trb_masthead_date",
-			"trb_masthead_date_margin_top",
-			"trb_masthead_date",
-			"font-family"
+			"trb_navhead asdasd"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -733,7 +748,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 10,
 			"sheets":
 			[
 				{
@@ -741,15 +756,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 10555,
+						"buffer_size": 10580,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3339,
-								3339
+								3385,
+								3385
 							]
 						],
 						"settings":
@@ -809,32 +824,31 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1129.0,
+						"translation.y": 906.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/js/modules/main-content.js",
+					"file": "app/js/modules/form-comic.js",
 					"settings":
 					{
-						"buffer_size": 14459,
+						"buffer_size": 20411,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9099,
-								9099
+								10314,
+								10314
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
 							"auto_complete": false,
-							"auto_name": "var MainContent = function ()",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -885,8 +899,7 @@
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 4332.0,
@@ -896,24 +909,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/js/modules/form-comic.js",
+					"file": "app/js/modules/main-content.js",
 					"settings":
 					{
-						"buffer_size": 20628,
+						"buffer_size": 13699,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18225,
-								18225
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"auto_complete": false,
 							"bh_regions":
 							[
 								"bh_regex",
@@ -967,7 +979,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10157.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -977,15 +989,15 @@
 					"file": "app/js/modules/navigation.js",
 					"settings":
 					{
-						"buffer_size": 7129,
+						"buffer_size": 8627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5496,
-								5496
+								5029,
+								5029
 							]
 						],
 						"settings":
@@ -1045,7 +1057,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3071.0,
+						"translation.y": 2964.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1055,15 +1067,15 @@
 					"file": "app/js/modules/login-out.js",
 					"settings":
 					{
-						"buffer_size": 3494,
+						"buffer_size": 4446,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1441,
-								1441
+								4228,
+								4228
 							]
 						],
 						"settings":
@@ -1123,7 +1135,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 182.0,
+						"translation.y": 2058.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1365,15 +1377,15 @@
 					"file": "app/css/style.css",
 					"settings":
 					{
-						"buffer_size": 1517,
+						"buffer_size": 1498,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								453,
-								453
+								639,
+								639
 							]
 						],
 						"settings":
@@ -1432,7 +1444,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 38.0,
+						"translation.y": 798.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1442,15 +1454,15 @@
 					"file": "app/js/facebook/fb-api.js",
 					"settings":
 					{
-						"buffer_size": 1244,
+						"buffer_size": 350,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								701,
-								701
+								137,
+								137
 							]
 						],
 						"settings":
@@ -1527,8 +1539,8 @@
 						"selection":
 						[
 							[
-								232,
-								232
+								295,
+								295
 							]
 						],
 						"settings":

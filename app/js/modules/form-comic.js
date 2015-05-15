@@ -174,6 +174,9 @@ var FormComic = {
       // Prevents default actions.
       event.preventDefault();
 
+      /** @type {String} Action to be executed with the form. */
+      var action = $('#add-comic-label').text() === 'Add comic' ? 'add' : 'modify'
+
       /** @type {Object} Images loaded in the input 'input-images' element. */
       var files = $('#input-images')[0].files;
 
@@ -218,12 +221,15 @@ var FormComic = {
         var comic = {};
 
         // Checks whether to add a new comic or to modify an existing one.
-        if ($('#add-comic-label').text() === 'Add comic') {
+        if (action === 'add') {
           // Creates a new comic object with the values obtained from the form.
           comic = new Controller.Comic($('#input-name').val(), setGenre(), $('#text-description').val().replace(/\n\r?/g, '<br />'), $('#input-quantity').val(), images, $('#text-videos').val());
 
           // Saves the new comic.
           Controller.setComic(comic);
+
+          // Calls the 'publishSocialNetworks' to publish a message to social networks.
+          MainContent.publishSocialNetworks('add', $('#input-name').val());
 
           // Displays an alert.
           MainContent.showAlert('Comic added successfully.', '#alert-ok');
@@ -260,6 +266,9 @@ var FormComic = {
 
           // Saves the changes.
           Controller.setComics(comics);
+
+          // Calls the 'publishSocialNetworks' to publish a message to social networks.
+          MainContent.publishSocialNetworks($('#input-name').val());
 
           // Displays an alert.
           MainContent.showAlert('Comic modified successfully.', '#alert-ok');
@@ -312,7 +321,7 @@ var FormComic = {
       }
 
       // Checks whether to add a new comic or to modify an existing one.
-      if ($('#add-comic-label').text() === 'Add comic') {
+      if (action === 'add') {
         readImages();
       } else {
         // Checks if the input 'checkbox-change-image' element is checked. If it is calls the function to read the images, if it is not, it goes to update the comic

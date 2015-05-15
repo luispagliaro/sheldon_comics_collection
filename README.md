@@ -14,9 +14,13 @@ To see the web live, go to: www.matvey.com.ar/comics/index.html (to use the Face
 
 - Filter comics by genre: by default the option 'Show all' it's checked. But it is possible to filter comics by genre just by clicking the 'Filter by genre' dropdown and then selecting a genre.
 
-- Comics display: the comics are all displayed in the main page. We can see information related to them like name, genre, quantity, a picture, a description, also see an image and a video gallery, and share it on facebook.
+- Share comics to social networks: the comics can be shared to Facebook, Google+ or Twitter.
+
+- Comics display: the comics are all displayed in the main page. We can see information related to them like name, genre, quantity, a picture, a description, also see an image and a video gallery, and share it on Facebook, Google+ and Twitter.
 
 - Adding, modifying and deleting comics: when adding a comic you have to input the name, genre (here you have the option to add a new genre), description, quantity, the youtube videos URL (one per line, example: https://www.youtube.com/watch?v=hbPaaXGAGkg), and the images to be submitted, all the fields are required. When modifying a comic, the same fields are required, to change the current images you have to check the 'Change images' checkbox in order to enable the image input. To delete a comic just click the delete icon that appears when hovering a comic.
+
+- Log in to social networks: logging in to Facebook and Twitter will allow publishing a message when a comic is added, modified or deleted. Google+ API doesn't allow to post messages, so logging in to Google+ is a feature implemented only for the course purposes.
 
 ### Other features
 
@@ -44,4 +48,7 @@ To see the web live, go to: www.matvey.com.ar/comics/index.html (to use the Face
 - jQuery UI
 - jQuery BlueImp Gallery
 - Facebook API
+- Google+ API
+- Twitter API
+- Hello
 - MD5

@@ -244,6 +244,41 @@ var MainContent = {
   },
 
   /**
+   * Publish on social networks when adding, modifying or deleting a comic.
+   * @param  {String} act       Action executed over the comic.
+   * @param  {[type]} comicName Name of the comic
+   */
+  publishSocialNetworks: function(act, comicName) {
+    // Checks if the comics is added, modified or deleted.
+    if (act === 'add') {
+      /** @type {Object} Message of the post for the social networks. */
+      var data = {
+        message: 'I\'ve added the comic \'' + comicName + '\' to my collection. Check it out!',
+        link: 'http://www.matvey.com.ar/comics2/index.html'
+      }
+    } else if (act === 'modify') {
+      /** @type {Object} Message of the post for the social networks. */
+      var data = {
+        message: 'I\'ve modified the comic \'' + comicName + '\' in my collection. Check it out!',
+        link: 'http://www.matvey.com.ar/comics2/index.html'
+      }
+    } else if (act === 'delete') {
+      /** @type {Object} Message of the post for the social networks. */
+      var data = {
+        message: 'I\'ve deleted the comic \'' + comicName + '\' from my collection. Check it out!',
+        link: 'http://www.matvey.com.ar/comics2/index.html'
+      }
+
+      // Checks to which social network the user is signed in and publishes the post.
+      if (LogInOut.checkSignIn('facebook')) {
+        hello('facebook').api('me/share', 'post', data);
+      } else if (LogInOut.checkSignIn('twitter')) {
+        hello('twitter').api('me/share', 'post', data);
+      }
+    }
+  },
+
+  /**
    * Sets the settings for when the user is loged in or not.
    * @param  {String} status Status logedin or not logedin.
    */
@@ -306,6 +341,9 @@ var MainContent = {
 
       /** @type {Array} All the comics */
       var comics = Controller.getComics();
+
+      // Calls the 'publishSocialNetworks' to publish a message to social networks.
+      MainContent.publishSocialNetworks('delete', comic.Name);
 
       // Deletes the selected comic.
       comics = $.grep(comics, function(e) {

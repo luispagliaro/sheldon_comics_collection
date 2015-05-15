@@ -115,10 +115,7 @@ var LogInOut = {
    * @param  {Object} el      li 'social-login' element clicked.
    * @return {[type]}         Social network status.
    */
-  checkSignIn: function(network, el) {
-    /** @type {String} ID of the li 'social-login' element clicked. */
-    var id = el.id;
-
+  checkSignIn: function(network) {
     /**
      * Checks if the social network session is loged in or expired.
      * @param  {Object} session   The current social network session.
