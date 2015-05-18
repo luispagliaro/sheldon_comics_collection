@@ -171,6 +171,12 @@ var Navigation = {
       // Checks the status of the session and sets the correct action for the li 'social-login' element.
       if (status) {
         $('#' + el.id + ' i').text(' Log out from ' + (network.charAt(0).toUpperCase() + network.substring(1)));
+
+        // Checks if he network to be loged in is Foursquare.
+        if (network === 'foursquare') {
+          // Calls the 'checkList' function.
+          Foursquare.checkList();
+        }
       } else {
         $('#' + el.id + ' i').text(' Log in to ' + (network.charAt(0).toUpperCase() + network.substring(1)));
       }
@@ -191,6 +197,8 @@ var Navigation = {
         return 'google';
       case 'fb-log':
         return 'facebook';
+      case 'fs-log':
+        return 'foursquare';
     }
   },
 
@@ -209,6 +217,12 @@ var Navigation = {
       if (LogInOut.checkSignIn(network)) {
         hello.logout(network).then(function() {
           Navigation.socialButtonsState();
+
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Loged out from ' + network + ' successfully.', '#alert-ok');
+        }, function() {
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Error trying to log out from ' + network + '.', '#alert-fail');
         });
       } else {
         /** @type {Object} Setting for the login popup. */
@@ -219,9 +233,15 @@ var Navigation = {
         // Opens the log in pop up for the selected social network.
         hello.login(network, options).then(function() {
           Navigation.socialButtonsState();
+
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Loged in to ' + network + ' successfully.', '#alert-ok');
+        }, function() {
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Error trying to log in to ' + network + '.', '#alert-fail');
         });
       }
-    })
+    });
   },
 
   /**
@@ -258,6 +278,45 @@ var Navigation = {
   },
 
   /**
+   * Loads the Google Map with the location of the venues where the comics were bought.
+   */
+  loadMap: function() {
+    /**
+     * Binds the on shown event to resize map when the modal is shown.
+     */
+    $('#dialog-venues-map').on('shown.bs.modal', function() {
+      /** @type {Object} Google map. */
+      var map = new google.maps.Map(document.getElementById('venues-map'), {
+        zoom: 4,
+        center: new google.maps.LatLng(-38.416097, -63.616672),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      /** @type {Array} All the comics. */
+      var comics = Controller.getComics();
+
+      $.each(comics, function(index, el) {
+        $.ajax({
+          type: 'GET',
+          url: 'https://api.foursquare.com/v2/venues/' + el.idVenue + '?client_id=PJGJ33BJMRIPCEQ2GHZICEMDNAPMI3Y5QKCO3Z0TK133H5CD&client_secret=VWYEN4DM5A04OAPQKS5R4DYN4GELHHLC0W3AUFRTV102XOVJ&v=20140806&m=foursquare',
+          success: function(data) {
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(data.response.venue.location.lat, data.response.venue.location.lng),
+              map: map
+            });
+          }
+        });
+      });
+
+      // Resizes the google map.
+      google.maps.event.trigger(map, 'resize');
+
+      // Sets the center of the map.
+      map.setCenter(new google.maps.LatLng(-38.416097, -63.616672));
+    });
+  },
+
+  /**
    * Logs the user out
    */
   logout: function() {
@@ -281,6 +340,7 @@ var Navigation = {
     Navigation.socialButtonsState();
     Navigation.socialLoginClick();
     Navigation.filterGenre();
+    Navigation.loadMap();
     Navigation.preventEnter();
     Navigation.logout();
   }

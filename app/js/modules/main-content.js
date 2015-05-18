@@ -249,32 +249,31 @@ var MainContent = {
    * @param  {[type]} comicName Name of the comic
    */
   publishSocialNetworks: function(act, comicName) {
-    // Checks if the comics is added, modified or deleted.
-    if (act === 'add') {
-      /** @type {Object} Message of the post for the social networks. */
-      var data = {
-        message: 'I\'ve added the comic \'' + comicName + '\' to my collection. Check it out!',
-        link: 'http://www.matvey.com.ar/comics2/index.html'
-      }
-    } else if (act === 'modify') {
-      /** @type {Object} Message of the post for the social networks. */
-      var data = {
-        message: 'I\'ve modified the comic \'' + comicName + '\' in my collection. Check it out!',
-        link: 'http://www.matvey.com.ar/comics2/index.html'
-      }
-    } else if (act === 'delete') {
-      /** @type {Object} Message of the post for the social networks. */
-      var data = {
-        message: 'I\'ve deleted the comic \'' + comicName + '\' from my collection. Check it out!',
-        link: 'http://www.matvey.com.ar/comics2/index.html'
-      }
+    /** @type {Object} Message of the post for the social networks. */
+    var data = {
+      message: '',
+      link: 'http://www.matvey.com.ar/comics2/index.html'
+    };
 
-      // Checks to which social network the user is signed in and publishes the post.
-      if (LogInOut.checkSignIn('facebook')) {
-        hello('facebook').api('me/share', 'post', data);
-      } else if (LogInOut.checkSignIn('twitter')) {
-        hello('twitter').api('me/share', 'post', data);
-      }
+    // Checks if the comics is added, modified or deleted.
+    switch (act) {
+      case 'add':
+        data.message = 'I\'ve added the comic \'' + comicName + '\' to my collection. Check it out!';
+        break;
+      case 'modify':
+        data.message = 'I\'ve modified the comic \'' + comicName + '\' in my collection. Check it out!';
+        break;
+      case 'delete':
+        data.message = 'I\'ve deleted the comic \'' + comicName + '\' from my collection.';
+        break;
+    }
+
+    // Checks to which social network the user is signed in and publishes the post.
+    if (LogInOut.checkSignIn('facebook')) {
+      hello('facebook').api('me/share', 'post', data);
+    }
+    if (LogInOut.checkSignIn('twitter')) {
+      hello('twitter').api('me/share', 'post', data);
     }
   },
 
@@ -339,11 +338,11 @@ var MainContent = {
       /** @type {Object} A comic */
       var comic = MainContent.getComic(el.closest('div'));
 
-      /** @type {Array} All the comics */
-      var comics = Controller.getComics();
-
       // Calls the 'publishSocialNetworks' to publish a message to social networks.
       MainContent.publishSocialNetworks('delete', comic.Name);
+
+      /** @type {Array} All the comics */
+      var comics = Controller.getComics();
 
       // Deletes the selected comic.
       comics = $.grep(comics, function(e) {
@@ -378,7 +377,7 @@ var MainContent = {
       var comic = MainContent.getComic($(this).closest('div'));
 
       // Calls the function 'loadComicData' to save the changes.
-      FormComic.loadComicData(comic.id, comic.name, comic.idGenre, comic.description, comic.quantity, comic.videos);
+      FormComic.loadComicData(comic.id, comic.name, comic.idGenre, comic.description, comic.quantity, comic.videos, comic.idVenue);
     });
   },
 

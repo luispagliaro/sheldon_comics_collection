@@ -111,3 +111,12 @@ label[for=input-id],
   padding-left: 5px;
   display: none;
 }
+
+.glyphicon-map-marker {
+  font-size: 30px;
+  top: 10px;
+}
+
+#venues-map {
+  height: 500px;
+}

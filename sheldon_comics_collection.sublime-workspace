@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"ex",
+				"exists"
+			],
+			[
+				"list",
+				"listId"
+			],
+			[
+				"in",
+				"inarray	$.inArray()"
+			],
+			[
+				"ret",
+				"returnID"
+			],
+			[
+				"lis",
+				"listId"
+			],
+			[
+				"get",
+				"getLists"
+			],
+			[
+				"comi",
+				"comicName"
+			],
+			[
+				"publi",
+				"publishSocialNetworks"
+			],
+			[
 				"margin",
 				"margin-bottom"
 			],
@@ -78,10 +110,6 @@
 			[
 				"has",
 				"hasError"
-			],
-			[
-				"get",
-				"getComic"
 			],
 			[
 				"cl",
@@ -232,10 +260,6 @@
 				"query"
 			],
 			[
-				"in",
-				"input	Tag"
-			],
-			[
 				"j",
 				"js/jquery"
 			],
@@ -279,15 +303,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 10580,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/js/modules/form-comic.js",
-			"settings":
-			{
-				"buffer_size": 20411,
+				"buffer_size": 11229,
 				"line_ending": "Unix"
 			}
 		},
@@ -295,15 +311,15 @@
 			"file": "app/js/modules/main-content.js",
 			"settings":
 			{
-				"buffer_size": 13699,
+				"buffer_size": 15363,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/js/modules/navigation.js",
+			"file": "app/js/modules/form-comic.js",
 			"settings":
 			{
-				"buffer_size": 8627,
+				"buffer_size": 21418,
 				"line_ending": "Unix"
 			}
 		},
@@ -311,7 +327,23 @@
 			"file": "app/js/modules/login-out.js",
 			"settings":
 			{
-				"buffer_size": 4446,
+				"buffer_size": 4350,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/modules/navigation.js",
+			"settings":
+			{
+				"buffer_size": 9768,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/js/foursquare/foursquare.js",
+			"settings":
+			{
+				"buffer_size": 1786,
 				"line_ending": "Unix"
 			}
 		},
@@ -319,7 +351,7 @@
 			"file": "app/js/modules/comic.js",
 			"settings":
 			{
-				"buffer_size": 2574,
+				"buffer_size": 2609,
 				"line_ending": "Unix"
 			}
 		},
@@ -343,7 +375,7 @@
 			"file": "app/css/style.css",
 			"settings":
 			{
-				"buffer_size": 1498,
+				"buffer_size": 1557,
 				"line_ending": "Unix"
 			}
 		},
@@ -359,7 +391,15 @@
 			"file": "app/js/hello/init.js",
 			"settings":
 			{
-				"buffer_size": 295,
+				"buffer_size": 363,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 4086,
 				"line_ending": "Unix"
 			}
 		}
@@ -408,6 +448,7 @@
 	},
 	"file_history":
 	[
+		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/modules/social-networks.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/modules/main-content.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/google+/google+.js",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/Documents/sheldon_comics_collection/app/js/google+/prueba.html",
@@ -534,8 +575,7 @@
 		"/etc/apache2/apache2.conf",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbine-tomcat-dev-install/setup.sh",
 		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/turbine.cfg/httpd-vhosts.conf",
-		"/etc/apache2/extra",
-		"/home/likewise-open/GLOBANT/luis.pagliaro/turbinetrunk/tomcat7/bin/catalina.sh"
+		"/etc/apache2/extra"
 	],
 	"find":
 	{
@@ -592,6 +632,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"checkList",
+			"checkSignIn",
+			"loadComicData",
+			"publishSocialNetworks",
+			"delete",
+			"}\n",
+			"checkSignIn",
+			"socialLoginClick",
 			"button",
 			"console",
 			");",
@@ -711,15 +759,7 @@
 			"trb_masthead_date",
 			"trb_masthead_right_container",
 			"masthead_subtitle_visibility",
-			"trb_masthead_right_container_display_700bp",
-			"margin-bottom",
-			"margin-bottom: 5",
-			"trb_navhead_weather",
-			"masthead_subtitle_visibility",
-			"trb_masthead_right_container_display_700bp",
-			"trb_masthead_right_container",
-			".trb_masthead_right_container",
-			"trb_navhead asdasd"
+			"trb_masthead_right_container_display_700bp"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -748,7 +788,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -756,15 +796,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 10580,
+						"buffer_size": 11229,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3385,
-								3385
+								10733,
+								10733
 							]
 						],
 						"settings":
@@ -824,25 +864,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 906.0,
+						"translation.y": 3971.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/js/modules/form-comic.js",
+					"file": "app/js/modules/main-content.js",
 					"settings":
 					{
-						"buffer_size": 20411,
+						"buffer_size": 15363,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10314,
-								10314
+								10825,
+								10825
 							]
 						],
 						"settings":
@@ -902,30 +942,109 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4332.0,
+						"translation.y": 4766.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/js/modules/main-content.js",
+					"file": "app/js/modules/form-comic.js",
 					"settings":
 					{
-						"buffer_size": 13699,
+						"buffer_size": 21418,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								11093,
+								11093
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6034.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/js/modules/login-out.js",
+					"settings":
+					{
+						"buffer_size": 4350,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
 							"bh_regions":
 							[
 								"bh_regex",
@@ -985,19 +1104,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "app/js/modules/navigation.js",
 					"settings":
 					{
-						"buffer_size": 8627,
+						"buffer_size": 9768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5029,
-								5029
+								8422,
+								8422
 							]
 						],
 						"settings":
@@ -1057,103 +1176,101 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2964.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/js/modules/login-out.js",
-					"settings":
-					{
-						"buffer_size": 4446,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4228,
-								4228
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"auto_complete": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2058.0,
+						"translation.y": 4951.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/js/modules/comic.js",
+					"file": "app/js/foursquare/foursquare.js",
 					"settings":
 					{
-						"buffer_size": 2574,
+						"buffer_size": 1786,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2419,
-								2419
+								928,
+								928
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 228.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/js/modules/comic.js",
+					"settings":
+					{
+						"buffer_size": 2609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								775,
+								775
 							]
 						],
 						"settings":
@@ -1213,13 +1330,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 190.0,
+						"translation.y": 532.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "app/js/modules/genre.js",
 					"settings":
 					{
@@ -1230,8 +1347,8 @@
 						"selection":
 						[
 							[
-								1654,
-								1654
+								777,
+								777
 							]
 						],
 						"settings":
@@ -1297,7 +1414,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "app/js/modules/app.js",
 					"settings":
 					{
@@ -1373,19 +1490,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "app/css/style.css",
 					"settings":
 					{
-						"buffer_size": 1498,
+						"buffer_size": 1557,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								639,
-								639
+								1271,
+								1271
 							]
 						],
 						"settings":
@@ -1444,13 +1561,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 798.0,
+						"translation.y": 1539.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "app/js/facebook/fb-api.js",
 					"settings":
 					{
@@ -1528,19 +1645,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "app/js/hello/init.js",
 					"settings":
 					{
-						"buffer_size": 295,
+						"buffer_size": 363,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								295,
-								295
+								136,
+								136
 							]
 						],
 						"settings":
@@ -1599,6 +1716,82 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 4086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4080,
+								4080
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 741.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

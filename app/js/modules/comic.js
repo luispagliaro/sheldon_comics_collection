@@ -12,7 +12,7 @@ var Controller = Controller || {};
  * @param {Array} images       Comic images.
  * @param {Array} videos       Comic videos.
  */
-Controller.Comic = function(name, idGenre, description, quantity, images, videos) {
+Controller.Comic = function(name, idGenre, description, quantity, images, videos, idVenue) {
   this.id = Controller.getComics().slice(-1)[0] ? Controller.getComics().slice(-1)[0].id + 1 : 1;
   this.name = name;
   this.idGenre = idGenre;
@@ -20,6 +20,7 @@ Controller.Comic = function(name, idGenre, description, quantity, images, videos
   this.quantity = quantity;
   this.images = images;
   this.videos = videos;
+  this.idVenue = idVenue;
 };
 
 /**

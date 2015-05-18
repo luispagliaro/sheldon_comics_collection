@@ -48,6 +48,7 @@
               </li>
             </ul>
             <div class="nav navbar-nav navbar-right">
+              <span class="glyphicon glyphicon-map-marker" title="Show venues from where the comics were bought" aria-hidden="true" data-toggle="modal" data-target="#dialog-venues-map"></span>
               <button id="button-login" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-login">Log in</button>
               <button id="button-add-comic" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#dialog-add-comic">Add comic</button>
               <div id="button-social-login" class="btn-default navbar-btn btn-group">
@@ -60,6 +61,7 @@
                   <li id="tw-log" class="social-login"><a href="#"><i class="fa fa-twitter"> Log in to Twitter</i></a></li>
                   <li id="go-log" class="social-login"><a href="#"><i class="fa fa-google"> Log in to Google+</i></a></li>
                   <li id="fb-log" class="social-login"><a href="#"><i class="fa fa-facebook"> Log in to Facebook</i></a></li>
+                  <li id="fs-log" class="social-login"><a href="#"><i class="fa fa-foursquare"> Log in to Foursquare</i></a></li>
                 </ul>
               </div>
               <button id="button-logout" type="button" class="btn btn-default navbar-btn">Log out</button>
@@ -151,6 +153,10 @@
               <input id="checkbox-change-image" type="checkbox">
               <label for="checkbox-change-image">Change images</label>
             </div>
+            <div class="form-group">
+              <label class="control-label" for="input-venue-id">Foursquare venue ID:</label>
+              <input type="text" class="form-control" id="input-venue-id" placeholder="Enter the ID of the Foursquare venue">
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
@@ -180,6 +186,17 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="dialog-venues-map" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="login-label">Venues where Dr. Sheldon Cooper has bought comics.</h4>
+        </div>
+        <div class="modal-body" id="venues-map"></div>
+      </div>
+    </div>
+  </div>
   <script src="js/jquery/jquery.min.js"></script>
   <script src="js/bootstrap/js/bootstrap.min.js"></script>
   <script src="js/jquery-ui-cupertino/jquery-ui.js"></script>
@@ -187,8 +204,10 @@
   <script src="js/gallery/js/bootstrap-image-gallery.min.js"></script>
   <script src="js/bootstrap/js/bootstrap-filestyle.min.js"></script>
   <script src="js/facebook/fb-api.js"></script>
-  <script src="js/google+/plusone.js"></script>
+  <script src="js/google/plusone.js"></script>
   <script src="js/twitter/widgets.js"></script>
+  <script src="js/google/maps.js"></script>
+  <script src="js/foursquare/foursquare.js"></script>
   <script src="js/hello/hello.js"></script>
   <script src="js/hello/init.js"></script>
   <script src="js/modules/login-out.js"></script>

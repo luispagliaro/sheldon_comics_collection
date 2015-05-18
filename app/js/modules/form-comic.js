@@ -223,13 +223,19 @@ var FormComic = {
         // Checks whether to add a new comic or to modify an existing one.
         if (action === 'add') {
           // Creates a new comic object with the values obtained from the form.
-          comic = new Controller.Comic($('#input-name').val(), setGenre(), $('#text-description').val().replace(/\n\r?/g, '<br />'), $('#input-quantity').val(), images, $('#text-videos').val());
+          comic = new Controller.Comic($('#input-name').val(), setGenre(), $('#text-description').val().replace(/\n\r?/g, '<br />'), $('#input-quantity').val(), images, $('#text-videos').val(), $('#input-venue-id').val());
 
           // Saves the new comic.
           Controller.setComic(comic);
 
           // Calls the 'publishSocialNetworks' to publish a message to social networks.
           MainContent.publishSocialNetworks('add', $('#input-name').val());
+
+          // Checks if there is data loaded in the input and if the user is loged in to foursquare.
+          if ($('#input-venue-id').val() !== '' && LogInOut.checkSignIn('foursquare')) {
+            // Calls the 'addVenueToList' to add the venue ID from Foursquare to the user list.
+            Foursquare.addVenueToList($('#input-venue-id').val());
+          }
 
           // Displays an alert.
           MainContent.showAlert('Comic added successfully.', '#alert-ok');
@@ -258,6 +264,9 @@ var FormComic = {
           // Updates the videos URLs of the comic.
           comics[index].videos = $('#text-videos').val();
 
+          // Updates the Foursquare venue ID.
+          comics[index].idVenue = $('#input-venue-id').val();
+
           // Checks if the input 'checkbox-change-image' element is checked.
           if ($('#checkbox-change-image').prop('checked')) {
             // Updates the images of the comic.
@@ -268,7 +277,13 @@ var FormComic = {
           Controller.setComics(comics);
 
           // Calls the 'publishSocialNetworks' to publish a message to social networks.
-          MainContent.publishSocialNetworks($('#input-name').val());
+          MainContent.publishSocialNetworks('modify', comics[index].name);
+
+          // Checks if there is data loaded in the input and if the user is loged in to foursquare.
+          if (comics[index].idVenue !== '' && LogInOut.checkSignIn('foursquare')) {
+            // Calls the 'addVenueToList' to add the venue ID from Foursquare to the user list.
+            Foursquare.addVenueToList(comics[index].idVenue);
+          }
 
           // Displays an alert.
           MainContent.showAlert('Comic modified successfully.', '#alert-ok');
@@ -342,14 +357,16 @@ var FormComic = {
    * @param  {String} description Description of the comic.
    * @param  {Number} quantity    Quantity of the comic.
    * @param  {String} videos      Videos of the comic.
+   * @param  {String} idVenue     Foursquare venue ID.
    */
-  loadComicData: function(id, name, idGenre, description, quantity, videos) {
+  loadComicData: function(id, name, idGenre, description, quantity, videos, idVenue) {
     $('#input-id').val(id);
     $('#input-name').val(name);
     $('#select-genre').val(idGenre);
     $('#text-description').val(description);
     $('#input-quantity').val(quantity);
     $('#text-videos').val(videos);
+    $('#input-venue-id').val(idVenue);
   },
 
   /**
