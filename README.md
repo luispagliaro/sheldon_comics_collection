@@ -52,5 +52,6 @@ To see the web live, go to: www.matvey.com.ar/comics/index.html (to use the Face
 - Facebook API
 - Google+ API
 - Twitter API
+- Foursquare API
 - Hello
 - MD5
