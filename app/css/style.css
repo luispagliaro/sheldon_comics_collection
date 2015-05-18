@@ -18,10 +18,6 @@ p {
   }
 }
 
-#add-comic-text {
-  display: none;
-}
-
 .navbar {
   margin-bottom: 0px;
 }
@@ -54,7 +50,8 @@ p {
 }
 
 .btn-sm {
-  margin-right: 6px;
+  margin-right: 5px;
+  margin-bottom: 2px;
 }
 
 .ui-autocomplete {
@@ -66,7 +63,7 @@ p {
 .btn-social.btn-xs {
   padding-left: 23px;
   padding-right: 3px;
-  margin-right: 6px;
+  margin-right: 5px;
 }
 
 .modal-fb {
@@ -88,15 +85,14 @@ p {
   border-top: none;
 }
 
-#button-add-comic {
-  display: none;
-}
-
+#add-comic-text,
+#button-add-comic,
 #checkbox-change-image,
 label[for=checkbox-change-image],
 #input-id,
-label[for=input-id]
-{
+label[for=input-id],
+#button-logout,
+#button-social-login {
   display: none;
 }
 
@@ -116,6 +112,11 @@ label[for=input-id]
   display: none;
 }
 
-#button-logout {
-  display: none;
+.glyphicon-map-marker {
+  font-size: 30px;
+  top: 10px;
+}
+
+#venues-map {
+  height: 500px;
 }

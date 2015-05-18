@@ -104,6 +104,11 @@ var Navigation = {
    */
   filterGenre: function() {
     /**
+     * Unbinds any previous click event.
+     */
+    $('#dropdown-genre-menu li').unbind('click');
+
+    /**
      * Binds the on click event to the 'li' element of the genre dropdown.
      */
     $('#dropdown-genre-menu li').click(function() {
@@ -121,7 +126,7 @@ var Navigation = {
         $('#comics-collection .comic-item').show(500);
       } else {
         $('#comics-collection .comic-item').show(500);
-        $('#comics-collection .comic-item:not(:contains(' + $(this).text() + '))').hide(500);
+        $('#comics-collection .comic-item:not(:contains(' + el.text() + '))').hide(500);
       }
     });
   },
@@ -153,6 +158,93 @@ var Navigation = {
   },
 
   /**
+   * Checks for every social network if the user is loged in.
+   */
+  socialButtonsState: function() {
+    $('.social-login').each(function(index, el) {
+      /** @type {String} Name of the network clicked. */
+      var network = Navigation.getSocialNetwork(el);
+
+      /** @type {Boolean} Status of the current social network session. */
+      var status = LogInOut.checkSignIn(network);
+
+      // Checks the status of the session and sets the correct action for the li 'social-login' element.
+      if (status) {
+        $('#' + el.id + ' i').text(' Log out from ' + (network.charAt(0).toUpperCase() + network.substring(1)));
+
+        // Checks if he network to be loged in is Foursquare.
+        if (network === 'foursquare') {
+          // Calls the 'checkList' function.
+          Foursquare.checkList();
+        }
+      } else {
+        $('#' + el.id + ' i').text(' Log in to ' + (network.charAt(0).toUpperCase() + network.substring(1)));
+      }
+    });
+  },
+
+  /**
+   * Gets the name of the social network to be used.
+   * @param  {Object} el li 'social-login' element clicked.
+   * @return {String}    Name of the social network.
+   */
+  getSocialNetwork: function(el) {
+    // Sets the network name according to what li element was clicked.
+    switch (el.id) {
+      case 'tw-log':
+        return 'twitter';
+      case 'go-log':
+        return 'google';
+      case 'fb-log':
+        return 'facebook';
+      case 'fs-log':
+        return 'foursquare';
+    }
+  },
+
+  /**
+   * Opens the log in pop up for the selected social network.
+   */
+  socialLoginClick: function() {
+    /**
+     * Binds the on click event to the li 'social-login' element.
+     */
+    $('.social-login').click(function() {
+      /** @type {String} Name of the network clicked. */
+      var network = Navigation.getSocialNetwork($(this)[0]);
+
+      // Checks if the user is loged in to the current network.
+      if (LogInOut.checkSignIn(network)) {
+        hello.logout(network).then(function() {
+          Navigation.socialButtonsState();
+
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Loged out from ' + network + ' successfully.', '#alert-ok');
+        }, function() {
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Error trying to log out from ' + network + '.', '#alert-fail');
+        });
+      } else {
+        /** @type {Object} Setting for the login popup. */
+        var options = {
+          scope: 'publish'
+        };
+
+        // Opens the log in pop up for the selected social network.
+        hello.login(network, options).then(function() {
+          Navigation.socialButtonsState();
+
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Loged in to ' + network + ' successfully.', '#alert-ok');
+        }, function() {
+          // Calls the 'showAlert' function to shows an alert to the user.
+          MainContent.showAlert('Error trying to log in to ' + network + '.', '#alert-fail');
+        });
+      }
+    });
+  },
+
+  /**
    * Sets the setting for when the user is loged in and for when it is not loged in.
    * @param  {String} status Status logedin or not logedin.
    */
@@ -163,20 +255,65 @@ var Navigation = {
       $('#button-login').hide();
 
       // Shows the button 'button-add-comic' element.
-      $('#button-add-comic').show();
+      $('#button-add-comic').css('display', 'inline-block');
 
       // Shows the button 'button-logout' element.
-      $('#button-logout').show();
+      $('#button-logout').css('display', 'inline-block');
+
+      // Shows the button 'button-social-login' element.
+      $('#button-social-login').css('display', 'inline-block');
     } else {
       // Shows the button 'button-login' element.
-      $('#button-login').show();
+      $('#button-login').css('display', 'inline-block');
 
       // Hides the button 'button-add-comic' element.
       $('#button-add-comic').hide();
 
       // Hides the button 'button-logout' element.
       $('#button-logout').hide();
+
+      // Shows the button 'button-social-login' element.
+      $('#button-social-login').hide();
     }
+  },
+
+  /**
+   * Loads the Google Map with the location of the venues where the comics were bought.
+   */
+  loadMap: function() {
+    /**
+     * Binds the on shown event to resize map when the modal is shown.
+     */
+    $('#dialog-venues-map').on('shown.bs.modal', function() {
+      /** @type {Object} Google map. */
+      var map = new google.maps.Map(document.getElementById('venues-map'), {
+        zoom: 4,
+        center: new google.maps.LatLng(-38.416097, -63.616672),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      /** @type {Array} All the comics. */
+      var comics = Controller.getComics();
+
+      $.each(comics, function(index, el) {
+        $.ajax({
+          type: 'GET',
+          url: 'https://api.foursquare.com/v2/venues/' + el.idVenue + '?client_id=PJGJ33BJMRIPCEQ2GHZICEMDNAPMI3Y5QKCO3Z0TK133H5CD&client_secret=VWYEN4DM5A04OAPQKS5R4DYN4GELHHLC0W3AUFRTV102XOVJ&v=20140806&m=foursquare',
+          success: function(data) {
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(data.response.venue.location.lat, data.response.venue.location.lng),
+              map: map
+            });
+          }
+        });
+      });
+
+      // Resizes the google map.
+      google.maps.event.trigger(map, 'resize');
+
+      // Sets the center of the map.
+      map.setCenter(new google.maps.LatLng(-38.416097, -63.616672));
+    });
   },
 
   /**
@@ -200,7 +337,10 @@ var Navigation = {
     Navigation.addGenresToFilterDropdown();
     Navigation.addComicButtonClick();
     Navigation.loginButtonClick();
+    Navigation.socialButtonsState();
+    Navigation.socialLoginClick();
     Navigation.filterGenre();
+    Navigation.loadMap();
     Navigation.preventEnter();
     Navigation.logout();
   }

@@ -42,23 +42,35 @@ var MainContent = {
 
         // Creates the div element for the comic.
         comicItem += '<div id="' + comic.id + '" class="comic-item col-xs-6 col-sm-4 col-md-3">';
-        comicItem += '<h4>' + title + '</h4>';
+        comicItem += '<h4 itemprop="name">' + title + '</h4>';
         comicItem += '<span class="label label-success" title="Genre">' + Controller.getGenre(comic.idGenre).name + '</span> ';
         comicItem += '<span class="badge" title="Quantity">' + comic.quantity + itemLabel + '</span>';
         comicItem += '<span class="glyphicon glyphicon-remove-circle pull-right" title="Remove comic" aria-hidden="true"></span>';
         comicItem += '<span class="glyphicon glyphicon-edit pull-right" title="Modify comic" aria-hidden="true" data-toggle="modal" data-target="#dialog-add-comic"></span>';
         comicItem += '<div class="thumbnail">';
-        comicItem += '<img src="' + comic.images[0] + '" class="img-responsive" alt="' + comic.description + '"/>';
-        comicItem += '<p class="caption">' + comic.description + '</p>';
+        comicItem += '<img itemprop="image" src="' + comic.images[0] + '" class="img-responsive" alt="' + comic.description + '"/>';
+        comicItem += '<p itemprop="description" class="caption">' + comic.description + '</p>';
+        comicItem += '<div class="row">';
+        comicItem += '<div class="col-xs-6">';
         comicItem += '<button class="btn btn-default btn-sm image-gallery-button" title="Image gallery" type="button" id="igallery-' + comic.id + '">';
         comicItem += '<i class="glyphicon glyphicon-picture"></i>';
         comicItem += '</button>';
         comicItem += '<button id="vgallery-' + comic.id + '" title="Video gallery" type="button" class="btn btn-default btn-sm video-gallery-button">';
         comicItem += '<i class="glyphicon glyphicon-film"></i>';
         comicItem += '</button>';
-        comicItem += '<a id="share-' + comic.id + '" class="btn btn-social btn-xs btn-vk btn-share">';
-        comicItem += '<i class="fa fa-facebook"></i>Share';
+        comicItem += '</div>';
+        comicItem += '<div class="col-xs-6">';
+        comicItem += '<a id="sharefb-' + comic.id + '" class="btn btn-sm btn-social-icon btn-facebook btn-share pull-right" title="Share on Facebook">';
+        comicItem += '<i class="fa fa-facebook"></i>';
         comicItem += '</a>';
+        comicItem += '<a id="shareg-' + comic.id + '" class="btn btn-sm btn-social-icon btn-google btn-share pull-right" title="Share on Google+">';
+        comicItem += '<i class="fa fa-google"></i>';
+        comicItem += '</a>';
+        comicItem += '<a id="sharetw-' + comic.id + '" class="btn btn-sm btn-social-icon btn-twitter btn-share pull-right" title="Share on Twitter">';
+        comicItem += '<i class="fa fa-twitter"></i>';
+        comicItem += '</a>';
+        comicItem += '</div>';
+        comicItem += '</div>';
         comicItem += '</div>';
         comicItem += '</div>';
 
@@ -69,12 +81,6 @@ var MainContent = {
         if (comic.name.length > 20) {
           $('.comic-item[id=' + comic.id + '] h4').attr('title', comic.name);
         }
-
-        /*fb comments 
-
-        <a id=\'comments-' + comic.id + '\' class=\'btn btn-social btn-xs btn-vk btn-comments\' data-toggle=\'modal\' data-target=\'#fb-comments-modal-' + comic.id + '\'><i class=\'fa fa-facebook\'></i>Comments</a>
-
-        $('body').append('<div class="modal fade modal-fb" id="fb-comments-modal-' + comic.id + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><div id="fb-comments-' + comic.id + '" href-data="http://www.matvey.com.ar/comics/index.html/?comments-' + comic.id + '" class="fb-comments" data-width="600" data-numposts="5" data-colorscheme="light"></div></div></div></div></div>');*/
       });
 
       // Adds the jQuery UI tooltip.
@@ -83,8 +89,14 @@ var MainContent = {
       // Calls the 'imageVideoGallery' function to create the image and video gallery for each comic.
       MainContent.imageVideoGallery();
 
-      // Calls the 'shareOnFB' function to create the Facebook sharer for each comic.
+      // Calls the 'shareOnFB' function to create the Facebook sharer.
       MainContent.shareOnFB();
+
+      // Calls the 'shareOnGoogle' function to create the Google+ sharer.
+      MainContent.shareOnGoogle();
+
+      // Calls the 'shareOnTwitter' function to create the Twitter sharer.
+      MainContent.shareOnTwitter();
 
       // Calls the 'addComicsToSearch' to fill the autocomplete for the search input.
       Navigation.addComicsToSearch();
@@ -166,7 +178,7 @@ var MainContent = {
     /**
      * Binds the on click event to the Facebook buttons.
      */
-    $('.btn-share').on('click', function(e) {
+    $('.btn-facebook').on('click', function(e) {
       // Prevents default actions.
       e.preventDefault();
 
@@ -177,7 +189,7 @@ var MainContent = {
       FB.ui({
         method: 'feed',
         name: comic.name,
-        link: 'http://www.matvey.com.ar/comics/index.html#share-' + comic.id,
+        link: 'http://www.matvey.com.ar/comics/index.html#sharefb-' + comic.id,
         picture: '',
         caption: Controller.getGenre(comic.idGenre).name,
         description: comic.description,
@@ -187,11 +199,90 @@ var MainContent = {
   },
 
   /**
+   * Creates the Google+ sharer.
+   */
+  shareOnGoogle: function() {
+    $('.btn-google').each(function() {
+      /** @type {Object} A comic. */
+      var comic = MainContent.getComic($(this));
+
+      /** @type {Object} Options for Google+ sharer. */
+      var options = {
+        contenturl: 'http://http://www.matvey.com.ar/comics2/index.html/' + comic.id,
+        clientid: '299681151289-38fqfoa8k1idvon13rjj71u7fgc0qqvb.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        prefilltext: 'Check this comic I\'ve found on Sheldon\'s Comics Collection! - Comic: ' + comic.name + ' - Description: ' + comic.description,
+        calltoactionlabel: 'VISIT',
+        calltoactionurl: 'http://www.matvey.com.ar/comics2/index.html'
+      };
+
+      // Creates the Google+ sharer object.
+      gapi.interactivepost.render('shareg-' + comic.id, options);
+    });
+  },
+
+  /**
+   * Creates the Twitter sharer.
+   */
+  shareOnTwitter: function() {
+    $('.btn-twitter').on('click', function() {
+      /** @type {Object} A comic. */
+      var comic = MainContent.getComic($(this));
+
+      /** @type {String} Text to tweet. */
+      var text = 'Check this comic I\'ve found on Sheldon\'s Comics Collection! - Comic: ' + comic.name;
+
+      /** @type {Number} Left position to center pop up horizontally. */
+      var leftPosition = (screen.width) ? (screen.width - 600) / 2 : 0;
+
+      /** @type {Number} Top position to center pop up vertically. */
+      var topPosition = (screen.height) ? (screen.height - 253) / 2 : 0;
+
+      // Launches the pop up for twitting.
+      window.open('https://twitter.com/intent/tweet?text=' + text, '_blank', 'toolbar=no, scrollbars=no, resizable=no, width=600, height=253, left=' + leftPosition + ', top=' + topPosition);
+    });
+  },
+
+  /**
+   * Publish on social networks when adding, modifying or deleting a comic.
+   * @param  {String} act       Action executed over the comic.
+   * @param  {[type]} comicName Name of the comic
+   */
+  publishSocialNetworks: function(act, comicName) {
+    /** @type {Object} Message of the post for the social networks. */
+    var data = {
+      message: '',
+      link: 'http://www.matvey.com.ar/comics2/index.html'
+    };
+
+    // Checks if the comics is added, modified or deleted.
+    switch (act) {
+      case 'add':
+        data.message = 'I\'ve added the comic \'' + comicName + '\' to my collection. Check it out!';
+        break;
+      case 'modify':
+        data.message = 'I\'ve modified the comic \'' + comicName + '\' in my collection. Check it out!';
+        break;
+      case 'delete':
+        data.message = 'I\'ve deleted the comic \'' + comicName + '\' from my collection.';
+        break;
+    }
+
+    // Checks to which social network the user is signed in and publishes the post.
+    if (LogInOut.checkSignIn('facebook')) {
+      hello('facebook').api('me/share', 'post', data);
+    }
+    if (LogInOut.checkSignIn('twitter')) {
+      hello('twitter').api('me/share', 'post', data);
+    }
+  },
+
+  /**
    * Sets the settings for when the user is loged in or not.
-   * @param  {String} status Status logedin or not logedin
+   * @param  {String} status Status logedin or not logedin.
    */
   userLogedIn: function(status) {
-    // Checks the status of the user
+    // Checks the status of the user.
     if (status === 'logedin') {
       // Shows a text to the user to add comics.
       $('#add-comic-text').show();
@@ -247,6 +338,9 @@ var MainContent = {
       /** @type {Object} A comic */
       var comic = MainContent.getComic(el.closest('div'));
 
+      // Calls the 'publishSocialNetworks' to publish a message to social networks.
+      MainContent.publishSocialNetworks('delete', comic.Name);
+
       /** @type {Array} All the comics */
       var comics = Controller.getComics();
 
@@ -283,20 +377,9 @@ var MainContent = {
       var comic = MainContent.getComic($(this).closest('div'));
 
       // Calls the function 'loadComicData' to save the changes.
-      FormComic.loadComicData(comic.id, comic.name, comic.idGenre, comic.description, comic.quantity, comic.videos);
+      FormComic.loadComicData(comic.id, comic.name, comic.idGenre, comic.description, comic.quantity, comic.videos, comic.idVenue);
     });
   },
-
-  /*fbComments: function() {
-    $('.btn-comments').on('click', function(e) {
-      e.preventDefault();
-
-      var id = $(this).attr('id');
-      id = id.substr((id.length - 1), 1);
-
-      $('#fb-comments-modal-' + id + '').remove();
-    });
-  },*/
 
   /**
    * Gets a comic from an element ID.
@@ -339,6 +422,5 @@ var MainContent = {
    */
   init: function() {
     MainContent.loadComics();
-    //MainContent.fbComments();
   }
 };
