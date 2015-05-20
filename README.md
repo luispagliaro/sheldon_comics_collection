@@ -46,6 +46,7 @@ To see the web live, go to: www.matvey.com.ar/comics/index.html (to use the soci
 - jQuery
 - JavaScript
 - CSS3
+- AJAX
 - Bootstrap
 - jQuery UI
 - jQuery BlueImp Gallery
